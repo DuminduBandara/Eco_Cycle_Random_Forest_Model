@@ -1,6 +1,7 @@
 name,latitude,longitude,type,category,rating,description,image_urls,distance_km,closest_route_point,source
-Gimanhala Hotel,7.879958,80.650618,attraction,tourist_attraction,4.0,"Jaffna - Kandy Highway, 754 Anuradhapura Road, Dambulla",[],0.6960957465629585,"(7.88621, 80.65094)",google
-Dambulla,7.874217000000001,80.6511287,attraction,tourist_attraction,0.0,"VMF2+MFJ, Dambulla",[],1.3337245558349888,"(7.88621, 80.65094)",google
-Dambulla Royal Cave Temple and Golden Temple,7.854914099999999,80.6505699,attraction,tourist_attraction,4.5,"Kandy - Jaffna Highway, Dambulla",[],1.4095010943230857,"(7.84292, 80.65471)",google
-Nalanda Gedige,7.669748599999999,80.645856,attraction,tourist_attraction,4.7,"MJ9W+V8X, Gedige Road, Matale",[],1.8610483660684607,"(7.68647, 80.64658)",google
-Hotel Sannasa,7.8589127,80.6620717,attraction,tourist_attraction,4.0,"1st Post, Kandalama Road, Dambulla",[],1.954472644560113,"(7.84292, 80.65471)",google
+Cinnamon Nature Trails,6.929325,79.84968800000001,attraction,tourist_attraction,4.3,"WRHX+PVP, Colombo",[],0.8499218984051801,"(6.93561, 79.85407)",google
+Christian Reformed Church of Sri Lanka,6.942084799999999,79.859072,attraction,tourist_attraction,4.0,"WVR5+RJP, Wolfendhal Lane, Colombo",[],0.9072991933187433,"(6.93561, 79.85407)",google
+Sri Lanka Philatelic Bureau,6.9280856,79.85786929999999,attraction,museum,4.6,"310 McCallum Road, Colombo",[],0.9358968539123549,"(6.93561, 79.85407)",google
+Sambodhi Pagoda Temple,6.9383932,79.8420285,attraction,tourist_attraction,4.6,"WRQR+9R2, Chaithya Road, Colombo",[],1.3647074972540496,"(6.93561, 79.85407)",google
+Manelwatta Temple,6.944921099999998,79.9513614,attraction,tourist_attraction,4.6,"WXW2+52M, Bollegala, Kalaniya,Sri Lanka",[],1.4372080785848875,"(6.93639, 79.94158)",google
+Excel World Entertainment Park,6.922451499999999,79.8612151,attraction,tourist_attraction,3.9,"338 T. B. Jayah Mawatha, Colombo",[],1.6621918757433303,"(6.93561, 79.85407)",google
