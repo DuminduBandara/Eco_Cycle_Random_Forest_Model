@@ -129,7 +129,7 @@
       ],
       "source": "google",
       "segment_id": 0,
-      "predicted_relevant": 1
+      "predicted_relevant": 0
     },
     {
       "name": "YOGA REIKI MEDITATION",
@@ -1419,7 +1419,7 @@
     }
   ],
   "metrics": {
-    "classifier_accuracy": 1.0,
+    "classifier_accuracy": 0.664179104477612,
     "detection_precision": 1.0,
     "detection_recall": 1.0,
     "detection_accuracy": 100.0,

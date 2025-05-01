@@ -14,6 +14,7 @@ from pymongo import MongoClient
 from requests.exceptions import RequestException
 import argparse
 
+
 # Base directory (current working directory)
 BASE_DIR = os.getcwd()
 
@@ -116,33 +117,31 @@ def predict_attractions(start_lat, start_lon, end_lat, end_lon, model_path):
     
     # Step 3: Fetch Tourist Attractions from MongoDB Atlas
     MONGO_URI = "mongodb+srv://vihi:vihi@itpcluster.bhmi6vu.mongodb.net/EcoCycle?retryWrites=true&w=majority"
+    tourist_attractions = []
     try:
-        client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=5000)
+        client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=30000)
         db = client["EcoCycle"]
         collection = db["locations"]
         db_data = list(collection.find())
         client.close()
+        for doc in db_data:
+            try:
+                tourist_attractions.append({
+                    "name": doc.get("name", "Unknown Attraction"),
+                    "latitude": float(doc.get("latitude", 0.0)),
+                    "longitude": float(doc.get("longitude", 0.0)),
+                    "type": doc.get("type", "attraction"),
+                    "category": doc.get("category", "unknown"),
+                    "rating": float(doc.get("rating", 0.0)),
+                    "description": doc.get("description", "No description"),
+                    "image_urls": doc.get("image_urls", []),
+                    "source": "database"
+                })
+            except (TypeError, ValueError) as e:
+                print(f"Error processing MongoDB document {doc.get('name', 'unknown')}: {e}", file=sys.stderr)
+                continue
     except Exception as e:
-        print(f"Error connecting to MongoDB Atlas: {e}", file=sys.stderr)
-        return {"error": f"Failed to fetch MongoDB data: {str(e)}"}
-    
-    tourist_attractions = []
-    for doc in db_data:
-        try:
-            tourist_attractions.append({
-                "name": doc.get("name", "Unknown Attraction"),
-                "latitude": float(doc.get("latitude", 0.0)),
-                "longitude": float(doc.get("longitude", 0.0)),
-                "type": doc.get("type", "attraction"),
-                "category": doc.get("category", "unknown"),
-                "rating": float(doc.get("rating", 0.0)),
-                "description": doc.get("description", "No description"),
-                "image_urls": doc.get("image_urls", []),
-                "source": "database"
-            })
-        except (TypeError, ValueError) as e:
-            print(f"Error processing MongoDB document {doc.get('name', 'unknown')}: {e}", file=sys.stderr)
-            continue
+        print(f"Error connecting to MongoDB Atlas: {e}, proceeding with Google data only.", file=sys.stderr)
     
     df_db = pd.DataFrame(tourist_attractions)
     if not df_db.empty:
@@ -152,7 +151,7 @@ def predict_attractions(start_lat, start_lon, end_lat, end_lon, model_path):
         except Exception as e:
             print(f"Error saving tourist_attractions_db.csv: {e}", file=sys.stderr)
     else:
-        print("MongoDB DataFrame is empty.", file=sys.stderr)
+        print("MongoDB DataFrame is empty, proceeding with Google data only.", file=sys.stderr)
         df_db = pd.DataFrame(columns=["name", "latitude", "longitude", "type", "category", "rating", "description", "image_urls", "source"])
     
     # Step 4: Combine Google and MongoDB Datasets
