@@ -12,8 +12,6 @@ import ast
 import joblib
 from pymongo import MongoClient
 from requests.exceptions import RequestException
-import argparse
-
 
 # Base directory (current working directory)
 BASE_DIR = os.getcwd()
@@ -238,7 +236,7 @@ def predict_attractions(start_lat, start_lon, end_lat, end_lon, model_path):
             encoded_polyline = data["routes"][0]["overview_polyline"]["points"]
             route_coords = [(lat, lon) for lat, lon in polyline.decode(encoded_polyline)]
         elif data["status"] == "ZERO_RESULTS":
-            params["mode"] = "walking"
+            params["mode": "walking"]
             response = requests.get(DIRECTIONS_URL, params=params)
             response.raise_for_status()
             data = response.json()
@@ -528,24 +526,3 @@ def predict_attractions(start_lat, start_lon, end_lat, end_lon, model_path):
         return {"error": f"Failed to save JSON output: {str(e)}"}
     
     return result
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Predict tourist attractions using a pre-trained Random Forest model.")
-    parser.add_argument("--start_lat", type=float, required=True, help="Starting latitude")
-    parser.add_argument("--start_lon", type=float, required=True, help="Starting longitude")
-    parser.add_argument("--end_lat", type=float, required=True, help="Ending latitude")
-    parser.add_argument("--end_lon", type=float, required=True, help="Ending longitude")
-    parser.add_argument("--model_path", type=str, default="random_forest_model.pkl", help="Path to the pre-trained model file")
-    args = parser.parse_args()
-    
-    # Validate coordinates
-    if not (-90 <= args.start_lat <= 90 and -180 <= args.start_lon <= 180 and
-            -90 <= args.end_lat <= 90 and -180 <= args.end_lon <= 180):
-        print("Error: Invalid coordinates", file=sys.stderr)
-        sys.exit(1)
-    
-    # Run the prediction function
-    result = predict_attractions(args.start_lat, args.start_lon, args.end_lat, args.end_lon, args.model_path)
-    
-    # Print JSON result
-    print(json.dumps(result, indent=2))
