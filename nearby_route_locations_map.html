@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b27e8f4d641f78be63afc722d861c325 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_b27e8f4d641f78be63afc722d861c325" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b27e8f4d641f78be63afc722d861c325 = L.map(
+                "map_b27e8f4d641f78be63afc722d861c325",
+                {
+                    center: [7.10885, 80.24745],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_66e1ab8b389e831054bb926fa1c0d004 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_66e1ab8b389e831054bb926fa1c0d004.addTo(map_b27e8f4d641f78be63afc722d861c325);
+        
+    
+            var poly_line_cdaac296a2a23859fead0915eaf325a9 = L.polyline(
+                [[6.92716, 79.86121], [6.92782, 79.86245], [6.9286, 79.86367], [6.92941, 79.86339], [6.93232, 79.86079], [6.93356, 79.86461], [6.9345, 79.86582], [6.93507, 79.87082], [6.93561, 79.87257], [6.93665, 79.87337], [6.93916, 79.87531], [6.94016, 79.8772], [6.94015, 79.87772], [6.94107, 79.87822], [6.94178, 79.87824], [6.94272, 79.87823], [6.94457, 79.87819], [6.9468, 79.8782], [6.95033, 79.87884], [6.955, 79.88273], [6.96284, 79.88913], [6.96787, 79.89311], [6.97115, 79.89397], [6.97518, 79.89515], [6.97762, 79.89805], [6.98079, 79.89948], [6.98309, 79.89925], [6.98605, 79.89937], [6.98833, 79.90034], [6.99106, 79.90246], [6.99425, 79.90361], [6.99719, 79.90434], [7.00104, 79.90412], [7.00455, 79.90174], [7.00587, 79.89941], [7.00677, 79.89546], [7.00904, 79.89249], [7.0108, 79.89155], [7.01223, 79.89107], [7.01383, 79.88965], [7.01858, 79.88922], [7.01792, 79.88876], [7.01753, 79.89154], [7.01644, 79.89851], [7.01432, 79.90365], [7.01098, 79.90871], [7.00851, 79.91229], [7.00691, 79.91618], [7.00642, 79.92295], [7.00823, 79.93028], [7.00958, 79.94218], [7.01047, 79.95525], [7.00954, 79.9578], [7.00788, 79.95952], [7.00218, 79.96131], [7.00207, 79.96196], [7.00291, 79.96257], [7.00427, 79.96367], [7.00515, 79.96377], [7.00576, 79.96425], [7.00887, 79.96623], [7.01347, 79.96729], [7.01607, 79.9698], [7.02, 79.97221], [7.0221, 79.97539], [7.02635, 79.97988], [7.03307, 79.98785], [7.03561, 79.99104], [7.03988, 79.99243], [7.04131, 79.99288], [7.04242, 79.99436], [7.0438, 79.99637], [7.04602, 79.99767], [7.04666, 79.99918], [7.04915, 80.00111], [7.05259, 80.00433], [7.05487, 80.00772], [7.05594, 80.0084], [7.05744, 80.00824], [7.06245, 80.01056], [7.07156, 80.01438], [7.07666, 80.02007], [7.08031, 80.02733], [7.08465, 80.03198], [7.08831, 80.03528], [7.09173, 80.03679], [7.09535, 80.04008], [7.09854, 80.04146], [7.10309, 80.04172], [7.10459, 80.04307], [7.10565, 80.04454], [7.10777, 80.04526], [7.10889, 80.04667], [7.1092, 80.0498], [7.11245, 80.05239], [7.11721, 80.05757], [7.12269, 80.06618], [7.12722, 80.07191], [7.13184, 80.07714], [7.13355, 80.0801], [7.13394, 80.08308], [7.13428, 80.0855], [7.1361, 80.09013], [7.13739, 80.09255], [7.13957, 80.09361], [7.1454, 80.09613], [7.14968, 80.09987], [7.15352, 80.10592], [7.15554, 80.10989], [7.15728, 80.11655], [7.15829, 80.11859], [7.15951, 80.11876], [7.1616, 80.11893], [7.16336, 80.11998], [7.16666, 80.12209], [7.16759, 80.12369], [7.17503, 80.12587], [7.17629, 80.12698], [7.17874, 80.13039], [7.18043, 80.13063], [7.18306, 80.13162], [7.18482, 80.13291], [7.18668, 80.13348], [7.18731, 80.13894], [7.18457, 80.14115], [7.18177, 80.14231], [7.18214, 80.1463], [7.18295, 80.14863], [7.18395, 80.14872], [7.18644, 80.14906], [7.18757, 80.15075], [7.19056, 80.15154], [7.19335, 80.15226], [7.19881, 80.15527], [7.20004, 80.1579], [7.20009, 80.15961], [7.20083, 80.16431], [7.20104, 80.1681], [7.20122, 80.17066], [7.20403, 80.17305], [7.20929, 80.17846], [7.21466, 80.18225], [7.21842, 80.18563], [7.22144, 80.18934], [7.22481, 80.19628], [7.22541, 80.19789], [7.2275, 80.19992], [7.23112, 80.20314], [7.23356, 80.2052], [7.234, 80.20609], [7.23651, 80.2077], [7.23957, 80.20811], [7.24062, 80.20856], [7.24145, 80.21028], [7.24026, 80.21296], [7.23434, 80.21617], [7.2332, 80.21719], [7.23231, 80.21719], [7.23071, 80.21783], [7.23186, 80.21917], [7.23539, 80.22383], [7.23655, 80.22452], [7.23729, 80.227], [7.23842, 80.22955], [7.23931, 80.23292], [7.23676, 80.23518], [7.23356, 80.23797], [7.23373, 80.24059], [7.23109, 80.24502], [7.23234, 80.24745], [7.23275, 80.25061], [7.23377, 80.25724], [7.23531, 80.26625], [7.23481, 80.26715], [7.23581, 80.26808], [7.23723, 80.26905], [7.23756, 80.27315], [7.23785, 80.27881], [7.23724, 80.28719], [7.23661, 80.28892], [7.23645, 80.2923], [7.23742, 80.29962], [7.23597, 80.30718], [7.23467, 80.31248], [7.23538, 80.31483], [7.23686, 80.31528], [7.23759, 80.31667], [7.23626, 80.31752], [7.23627, 80.3194], [7.2374, 80.32199], [7.23892, 80.3223], [7.24083, 80.32178], [7.24341, 80.32192], [7.24355, 80.32253], [7.24621, 80.32348], [7.24966, 80.32322], [7.25142, 80.32339], [7.25151, 80.32668], [7.25139, 80.32987], [7.25058, 80.33264], [7.25194, 80.33893], [7.25457, 80.3527], [7.25475, 80.35485], [7.25288, 80.35827], [7.25054, 80.36264], [7.25071, 80.37066], [7.25244, 80.37684], [7.25486, 80.38838], [7.25536, 80.39152], [7.25645, 80.39443], [7.25632, 80.4], [7.25688, 80.40477], [7.25648, 80.407], [7.25574, 80.40917], [7.25429, 80.41531], [7.25032, 80.41721], [7.24818, 80.41779], [7.24742, 80.41835], [7.2483, 80.41893], [7.24999, 80.42011], [7.24959, 80.42092], [7.25075, 80.42093], [7.25125, 80.42199], [7.2522, 80.42795], [7.25177, 80.43034], [7.25212, 80.4343], [7.25298, 80.43928], [7.25442, 80.44563], [7.25338, 80.44829], [7.25059, 80.45144], [7.24918, 80.45602], [7.24913, 80.45932], [7.24979, 80.46141], [7.24932, 80.46307], [7.2471, 80.46515], [7.24812, 80.47139], [7.24776, 80.47329], [7.24881, 80.4747], [7.24932, 80.47783], [7.2499, 80.47977], [7.25038, 80.48217], [7.25126, 80.48426], [7.25231, 80.48466], [7.25247, 80.48555], [7.25334, 80.48589], [7.25302, 80.48683], [7.25426, 80.48743], [7.25386, 80.48835], [7.25488, 80.48804], [7.25575, 80.48885], [7.25605, 80.49096], [7.25524, 80.49308], [7.2531, 80.4963], [7.25272, 80.49809], [7.25301, 80.50023], [7.25368, 80.50276], [7.25281, 80.50437], [7.25297, 80.50624], [7.25309, 80.50931], [7.25186, 80.50896], [7.25182, 80.50937], [7.25351, 80.51083], [7.25412, 80.51283], [7.25514, 80.51524], [7.25691, 80.51787], [7.2584, 80.52393], [7.25909, 80.52668], [7.26161, 80.53032], [7.26232, 80.53186], [7.26145, 80.53376], [7.26206, 80.53762], [7.2611, 80.54004], [7.26179, 80.54297], [7.2636, 80.54513], [7.26345, 80.54799], [7.26512, 80.55106], [7.26623, 80.55313], [7.26564, 80.55553], [7.26424, 80.55942], [7.26464, 80.56204], [7.26592, 80.56444], [7.26658, 80.56689], [7.26757, 80.56891], [7.26728, 80.57328], [7.26753, 80.57569], [7.26842, 80.57765], [7.26874, 80.58039], [7.26772, 80.58113], [7.26601, 80.58273], [7.26525, 80.58552], [7.2647, 80.58704], [7.2652, 80.59016], [7.26587, 80.59204], [7.26667, 80.59269], [7.26777, 80.59271], [7.27056, 80.59238], [7.27601, 80.59114], [7.27774, 80.59182], [7.27802, 80.59304], [7.2772, 80.59443], [7.27614, 80.59812], [7.27246, 80.60425], [7.27128, 80.60681], [7.27482, 80.61352], [7.27878, 80.61848], [7.28678, 80.62986], [7.2891, 80.63254], [7.2917, 80.63357], [7.29119, 80.63439], [7.2904, 80.63427], [7.29035, 80.63402], [7.29036, 80.63403]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_b27e8f4d641f78be63afc722d861c325);
+        
+    
+            var circle_79d908406cf4a1020a085e7633bf3524 = L.circle(
+                [6.926817980000001, 79.85616648],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1727.6251282240082, "stroke": true, "weight": 3}
+            ).addTo(map_b27e8f4d641f78be63afc722d861c325);
+        
+    
+        var popup_fcc9b4d6f0d37ade607be4a999583cb8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_725a433e5fc6234c842812871fe3b92e = $(`<div id="html_725a433e5fc6234c842812871fe3b92e" style="width: 100.0%; height: 100.0%;">Segment 0 (Centroid)</div>`)[0];
+                popup_fcc9b4d6f0d37ade607be4a999583cb8.setContent(html_725a433e5fc6234c842812871fe3b92e);
+            
+        
+
+        circle_79d908406cf4a1020a085e7633bf3524.bindPopup(popup_fcc9b4d6f0d37ade607be4a999583cb8)
+        ;
+
+        
+    
+    
+            var marker_8c60583b4f7f198d412403e29ef8a454 = L.marker(
+                [6.926817980000001, 79.85616648],
+                {}
+            ).addTo(map_b27e8f4d641f78be63afc722d861c325);
+        
+    
+            var div_icon_857263ffe393ad8a042852cc3d31e10c = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12pt; color: black;\"\u003eSegment 0\u003c/div\u003e"});
+            marker_8c60583b4f7f198d412403e29ef8a454.setIcon(div_icon_857263ffe393ad8a042852cc3d31e10c);
+        
+    
+        var popup_c0f118ba5ebf39ff73bf66e501911cf1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_aca985ec028bf331052cb7211f6a1bd5 = $(`<div id="html_aca985ec028bf331052cb7211f6a1bd5" style="width: 100.0%; height: 100.0%;">Segment 0 Centroid</div>`)[0];
+                popup_c0f118ba5ebf39ff73bf66e501911cf1.setContent(html_aca985ec028bf331052cb7211f6a1bd5);
+            
+        
+
+        marker_8c60583b4f7f198d412403e29ef8a454.bindPopup(popup_c0f118ba5ebf39ff73bf66e501911cf1)
+        ;
+
+        
+    
+    
+            var marker_37583e89c5c3bf702b51789e423eaa6f = L.marker(
+                [6.9280856, 79.85786929999999],
+                {}
+            ).addTo(map_b27e8f4d641f78be63afc722d861c325);
+        
+    
+            var icon_effbc335f5f71b03da69703f061d7d37 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_37583e89c5c3bf702b51789e423eaa6f.setIcon(icon_effbc335f5f71b03da69703f061d7d37);
+        
+    
+        var popup_3f4b99f7db2d60ffec05dd3112f09f1b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_50745662e7846daf36b6f160c4ba427a = $(`<div id="html_50745662e7846daf36b6f160c4ba427a" style="width: 100.0%; height: 100.0%;">Sri Lanka Philatelic Bureau<br>310 McCallum Road, Colombo<br>Distance: 0.38 km<br>Segment: 0</div>`)[0];
+                popup_3f4b99f7db2d60ffec05dd3112f09f1b.setContent(html_50745662e7846daf36b6f160c4ba427a);
+            
+        
+
+        marker_37583e89c5c3bf702b51789e423eaa6f.bindPopup(popup_3f4b99f7db2d60ffec05dd3112f09f1b)
+        ;
+
+        
+    
+    
+            var marker_76f44df8f7b4ca06a1c55ece637093a2 = L.marker(
+                [6.922451499999999, 79.8612151],
+                {}
+            ).addTo(map_b27e8f4d641f78be63afc722d861c325);
+        
+    
+            var icon_3d5bc35c3207741bc7c562f8723ed45a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_76f44df8f7b4ca06a1c55ece637093a2.setIcon(icon_3d5bc35c3207741bc7c562f8723ed45a);
+        
+    
+        var popup_fd4c825b7987d7ab9153debdc3f73220 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_46f032a16c46b9fc360cb68f65d04a17 = $(`<div id="html_46f032a16c46b9fc360cb68f65d04a17" style="width: 100.0%; height: 100.0%;">Excel World Entertainment Park<br>338 T. B. Jayah Mawatha, Colombo<br>Distance: 0.52 km<br>Segment: 0</div>`)[0];
+                popup_fd4c825b7987d7ab9153debdc3f73220.setContent(html_46f032a16c46b9fc360cb68f65d04a17);
+            
+        
+
+        marker_76f44df8f7b4ca06a1c55ece637093a2.bindPopup(popup_fd4c825b7987d7ab9153debdc3f73220)
+        ;
+
+        
+    
+    
+            var marker_298919a013b54f83f0297b30447225da = L.marker(
+                [6.929325, 79.84968800000001],
+                {}
+            ).addTo(map_b27e8f4d641f78be63afc722d861c325);
+        
+    
+            var icon_010f5c79b8bc6ce4069525f3a7187d6a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_298919a013b54f83f0297b30447225da.setIcon(icon_010f5c79b8bc6ce4069525f3a7187d6a);
+        
+    
+        var popup_2ac5ee8a816aefafe6940aee57284e18 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_355f92051da7768c43f31ad601645b8d = $(`<div id="html_355f92051da7768c43f31ad601645b8d" style="width: 100.0%; height: 100.0%;">Cinnamon Nature Trails<br>WRHX+PVP, Colombo<br>Distance: 1.29 km<br>Segment: 0</div>`)[0];
+                popup_2ac5ee8a816aefafe6940aee57284e18.setContent(html_355f92051da7768c43f31ad601645b8d);
+            
+        
+
+        marker_298919a013b54f83f0297b30447225da.bindPopup(popup_2ac5ee8a816aefafe6940aee57284e18)
+        ;
+
+        
+    
+    
+            var marker_d55099ea4e4f0dfb7154cd4352dffd53 = L.marker(
+                [6.942084799999999, 79.859072],
+                {}
+            ).addTo(map_b27e8f4d641f78be63afc722d861c325);
+        
+    
+            var icon_40c16a767c2c196e15a2dbc8a89c7039 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_d55099ea4e4f0dfb7154cd4352dffd53.setIcon(icon_40c16a767c2c196e15a2dbc8a89c7039);
+        
+    
+        var popup_5eeb5eae29224cee9e2ae56d4f989db2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1411bd46f9d3bf6daa8f825e97e89e0e = $(`<div id="html_1411bd46f9d3bf6daa8f825e97e89e0e" style="width: 100.0%; height: 100.0%;">Christian Reformed Church of Sri Lanka<br>WVR5+RJP, Wolfendhal Lane, Colombo<br>Distance: 1.68 km<br>Segment: 0</div>`)[0];
+                popup_5eeb5eae29224cee9e2ae56d4f989db2.setContent(html_1411bd46f9d3bf6daa8f825e97e89e0e);
+            
+        
+
+        marker_d55099ea4e4f0dfb7154cd4352dffd53.bindPopup(popup_5eeb5eae29224cee9e2ae56d4f989db2)
+        ;
+
+        
+    
+    
+            var marker_6bdf8b7c15b15e5c793aa5e1353065c7 = L.marker(
+                [6.912143, 79.852988],
+                {}
+            ).addTo(map_b27e8f4d641f78be63afc722d861c325);
+        
+    
+            var icon_4a83a2243ee758da999fd893c471023a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6bdf8b7c15b15e5c793aa5e1353065c7.setIcon(icon_4a83a2243ee758da999fd893c471023a);
+        
+    
+        var popup_e64d626729145610c828fbb198246e67 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f8601c40edad07c5b81e4e94b5acb5db = $(`<div id="html_f8601c40edad07c5b81e4e94b5acb5db" style="width: 100.0%; height: 100.0%;">Gem Museum<br>43 Ananda Coomaraswamy Mawatha, Colombo<br>Distance: 1.90 km<br>Segment: 0</div>`)[0];
+                popup_e64d626729145610c828fbb198246e67.setContent(html_f8601c40edad07c5b81e4e94b5acb5db);
+            
+        
+
+        marker_6bdf8b7c15b15e5c793aa5e1353065c7.bindPopup(popup_e64d626729145610c828fbb198246e67)
+        ;
+
+        
+    
+    
+            var circle_498d2e519a1e6a75b8fe2f7b1059190f = L.circle(
+                [7.293190125000001, 80.6422142],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 980.7495011300188, "stroke": true, "weight": 3}
+            ).addTo(map_b27e8f4d641f78be63afc722d861c325);
+        
+    
+        var popup_2abcc7bbe85d6a48447b636548171564 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_93ab251b6f3c003bf07700cf28375fdf = $(`<div id="html_93ab251b6f3c003bf07700cf28375fdf" style="width: 100.0%; height: 100.0%;">Segment 52 (Centroid)</div>`)[0];
+                popup_2abcc7bbe85d6a48447b636548171564.setContent(html_93ab251b6f3c003bf07700cf28375fdf);
+            
+        
+
+        circle_498d2e519a1e6a75b8fe2f7b1059190f.bindPopup(popup_2abcc7bbe85d6a48447b636548171564)
+        ;
+
+        
+    
+    
+            var marker_78bd8b25f7a93a0836e7676b926832e8 = L.marker(
+                [7.293190125000001, 80.6422142],
+                {}
+            ).addTo(map_b27e8f4d641f78be63afc722d861c325);
+        
+    
+            var div_icon_49fa7dd8f28c193da6acc4ceb6590c46 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12pt; color: black;\"\u003eSegment 52\u003c/div\u003e"});
+            marker_78bd8b25f7a93a0836e7676b926832e8.setIcon(div_icon_49fa7dd8f28c193da6acc4ceb6590c46);
+        
+    
+        var popup_c342ebe8d59f9743fb58897348eb0758 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_babb07201e2051695d61d951a41ec457 = $(`<div id="html_babb07201e2051695d61d951a41ec457" style="width: 100.0%; height: 100.0%;">Segment 52 Centroid</div>`)[0];
+                popup_c342ebe8d59f9743fb58897348eb0758.setContent(html_babb07201e2051695d61d951a41ec457);
+            
+        
+
+        marker_78bd8b25f7a93a0836e7676b926832e8.bindPopup(popup_c342ebe8d59f9743fb58897348eb0758)
+        ;
+
+        
+    
+    
+            var marker_0ead75f716164cc7df38ab06a2e5216e = L.marker(
+                [7.2937812, 80.63591],
+                {}
+            ).addTo(map_b27e8f4d641f78be63afc722d861c325);
+        
+    
+            var icon_e53d6b7d6493f50fd1f1f7cfb68cf5c5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_0ead75f716164cc7df38ab06a2e5216e.setIcon(icon_e53d6b7d6493f50fd1f1f7cfb68cf5c5);
+        
+    
+        var popup_2dd03bf5edc6fa971d9fcce4d199af2f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_18d123db161ee19461b49d94552b17c8 = $(`<div id="html_18d123db161ee19461b49d94552b17c8" style="width: 100.0%; height: 100.0%;">Temple of the Tooth<br>Sri Dalada Maligawa, commonly known in English as the Temple of the Sacred Tooth Relic, is a Buddhist temple in Kandy, Sri Lanka. It is located in the Royal Palace Complex of the former Kingdom of Kandy, which houses the relic of the tooth of the Buddha.<br><img src="[" width="100" height="100"><br>Distance: 1.03 km<br>Segment: 52</div>`)[0];
+                popup_2dd03bf5edc6fa971d9fcce4d199af2f.setContent(html_18d123db161ee19461b49d94552b17c8);
+            
+        
+
+        marker_0ead75f716164cc7df38ab06a2e5216e.bindPopup(popup_2dd03bf5edc6fa971d9fcce4d199af2f)
+        ;
+
+        
+    
+    
+            var marker_e67995468ac44aa76aa1bce23298fbdf = L.marker(
+                [7.284680200000001, 80.6434498],
+                {}
+            ).addTo(map_b27e8f4d641f78be63afc722d861c325);
+        
+    
+            var icon_4c4ebf8022fd26cde256de396207a6f6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e67995468ac44aa76aa1bce23298fbdf.setIcon(icon_4c4ebf8022fd26cde256de396207a6f6);
+        
+    
+        var popup_7511f9837b9598366ce77d8c7f8d11ca = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_79eb3911d02f1794428b15da06195533 = $(`<div id="html_79eb3911d02f1794428b15da06195533" style="width: 100.0%; height: 100.0%;">Rajanima Craft (Pvt) Ltd<br>173 Rajapihilla Mawatha, Kandy<br>Distance: 1.52 km<br>Segment: 52</div>`)[0];
+                popup_7511f9837b9598366ce77d8c7f8d11ca.setContent(html_79eb3911d02f1794428b15da06195533);
+            
+        
+
+        marker_e67995468ac44aa76aa1bce23298fbdf.bindPopup(popup_7511f9837b9598366ce77d8c7f8d11ca)
+        ;
+
+        
+    
+    
+            var marker_eef30e76f4f1be5f2dac8715e322e037 = L.marker(
+                [7.2947862, 80.6410831],
+                {}
+            ).addTo(map_b27e8f4d641f78be63afc722d861c325);
+        
+    
+            var icon_b579b1b64e97d76da66e924b27610213 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_eef30e76f4f1be5f2dac8715e322e037.setIcon(icon_b579b1b64e97d76da66e924b27610213);
+        
+    
+        var popup_db40ae477c191da40c4345ad5c3ff4bc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e5518b74590a21ed66c949918b518aa5 = $(`<div id="html_e5518b74590a21ed66c949918b518aa5" style="width: 100.0%; height: 100.0%;">Old Royal Palace<br>15 Raja Veediya, Kandy<br>Distance: 1.52 km<br>Segment: 52</div>`)[0];
+                popup_db40ae477c191da40c4345ad5c3ff4bc.setContent(html_e5518b74590a21ed66c949918b518aa5);
+            
+        
+
+        marker_eef30e76f4f1be5f2dac8715e322e037.bindPopup(popup_db40ae477c191da40c4345ad5c3ff4bc)
+        ;
+
+        
+    
+    
+            var marker_e1113a298745a450541fa299bff30f19 = L.marker(
+                [7.2995129, 80.6484139],
+                {}
+            ).addTo(map_b27e8f4d641f78be63afc722d861c325);
+        
+    
+            var icon_c71dbfabaa989d215cc64dc9b6ac1ae9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e1113a298745a450541fa299bff30f19.setIcon(icon_c71dbfabaa989d215cc64dc9b6ac1ae9);
+        
+    
+        var popup_375e58f899e442bd925d5e05cad82a56 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_568fa6a3b17808c0c4be8050d21bdae9 = $(`<div id="html_568fa6a3b17808c0c4be8050d21bdae9" style="width: 100.0%; height: 100.0%;">YOGA REIKI MEDITATION<br>142/5A Dharmashoka Mawatha, Kandy<br>Distance: 1.89 km<br>Segment: 52</div>`)[0];
+                popup_375e58f899e442bd925d5e05cad82a56.setContent(html_568fa6a3b17808c0c4be8050d21bdae9);
+            
+        
+
+        marker_e1113a298745a450541fa299bff30f19.bindPopup(popup_375e58f899e442bd925d5e05cad82a56)
+        ;
+
+        
+    
+    
+            map_b27e8f4d641f78be63afc722d861c325.fitBounds(
+                [[6.9271, 79.8612], [7.2906, 80.6337]],
+                {}
+            );
+        
+</script>
+</html>

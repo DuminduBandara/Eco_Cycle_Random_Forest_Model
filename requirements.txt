@@ -1,0 +1,8 @@
+pandas==2.2.2
+scikit-learn==1.5.1
+joblib==1.4.2
+haversine==2.8.1
+polyline==2.0.2
+requests==2.32.3
+pymongo==4.8.0
+folium==0.17.0

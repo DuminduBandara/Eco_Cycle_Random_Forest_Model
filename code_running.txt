@@ -1,0 +1,8 @@
+python3 -m venv venv
+source venv/bin/activate
+
+run the model
+python3 predict_tourism.py --start_lat 6.9271 --start_lon 79.8612 --end_lat 7.2906 --end_lon 80.6337 --model_path random_forest_model.pkl
+
+test model-->
+python3 train_tourism_classifier.py --start_lat 6.9271 --start_lon 79.8612 --end_lat 7.2906 --end_lon 80.6337
