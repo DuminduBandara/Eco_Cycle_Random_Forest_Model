@@ -1,135 +1,135 @@
 name,latitude,longitude,type,category,rating,description,image_urls,source,distance_to_user,predicted_relevant,relevant
-Temple of the Tooth,7.2937812,80.63591,attraction,temple,4.5,"Sri Dalada Maligawa, commonly known in English as the Temple of the Sacred Tooth Relic, is a Buddhist temple in Kandy, Sri Lanka. It is located in the Royal Palace Complex of the former Kingdom of Kandy, which houses the relic of the tooth of the Buddha.","['https://cdn.pixabay.com/photo/2015/08/20/17/45/sri-lanka-897819_640.jpg', 'https://cdn.pixabay.com/photo/2017/03/01/05/50/sri-lanka-2107620_640.jpg', 'https://cdn.pixabay.com/photo/2013/11/03/11/58/temple-204803_1280.jpg', 'https://cdn.pixabay.com/photo/2019/05/02/14/00/kandy-4173595_640.jpg']",database,50.231177108184696,0,1
-Dematamal Viharaya| දෙමටමල් විහාරය,6.7539904,81.2880131,attraction,tourist_attraction,4.8,B522,[],google,49.78902906156122,0,0
-Tunnel NO 18/ Pattipola Tunnel [Up Country Line],6.8426174,80.83722120000002,attraction,tourist_attraction,4.8,"RRVP+2VX, Pattipola",[],google,7.152908506746488,0,0
-Moon Plains,6.9523269,80.79640409999999,attraction,tourist_attraction,4.5,"Ranhawadigama Road, Nuwara Eliya",[],google,9.189872146989167,0,1
-Upper Diyaluma Waterfall,6.734827800000001,81.03244720000001,attraction,tourist_attraction,4.8,"Colombo - Batticaloa Highway, Uva-Gampaha",[],google,26.415215509617948,0,0
-Diyawatanalla Waterfall,6.849332000000001,80.8589566,attraction,tourist_attraction,3.1,"RVX5+PHP, Gatalagamuwa - Alawathugoda Road, Alawathugoda",[],google,5.857734483977252,1,0
-St. Francis Xavier's Church,6.9773709,80.7649881,attraction,tourist_attraction,4.7,"2016 Bandaranaike Mawatha, Nuwara Eliya",[],google,13.636564131433333,0,0
-Auslink Hotel Walapane Sri Lanka,7.095043299999999,80.86279139999999,attraction,tourist_attraction,3.9,"47 Walapane - Nildandahinna Road, Walapane",[],google,21.47631749293427,0,1
-Mallipotha Tank - මාලිප්පොත වැව,7.147922899999998,81.167884,attraction,tourist_attraction,3.8,"45X9+556, Kiriwandeniya Road, Rambukkana",[],google,43.418804854981985,0,0
-Porawagala Viewpoint,6.8301766,81.0127674,attraction,tourist_attraction,4.4,"Mahaulpatha, Galkanda, Bandarawela",[],google,18.42002181320583,0,0
-Ravana's Cave,6.8644786,81.04864169999999,attraction,tourist_attraction,4.0,"V27X+QFR, Ella",[],google,20.980358964232973,1,0
-Uva Halpewatte Tea Factory Tour,6.8892883,81.0345068,attraction,tourist_attraction,4.6,"Uva Halpewatte Tea Factory, Badulla Road, Hela Halpe, Ella, Sri Lanka",[],google,19.054316838708534,0,0
-Piduruthalagala Conservation Forest,7.0216667,80.7561111,attraction,tourist_attraction,4.6,"2QC4+MC9, Nuwara Eliya",[],google,17.745239620802455,0,0
-Muthiyangana Raja Maha Vihara,6.9842184,81.0613561,attraction,tourist_attraction,4.7,"X3M6+MGQ, Station Road, Badulla",[],google,23.795175488244993,0,0
-Devon Falls,6.951407700000001,80.6300174,attraction,tourist_attraction,4.6,"XJ2J+H26, Nawalapitiya - Dimbula Road",[],google,26.231667886395268,0,0
-Weli Oya Bridge,6.767487599999999,80.8468142,attraction,tourist_attraction,4.6,"QR8W+XPW, Walhaputenna",[],google,15.04463003969947,0,0
-Ramboda Falls,7.054569199999999,80.705331,attraction,tourist_attraction,4.6,"3P34+R4G, A5, Ramboda",[],google,24.26076257026865,0,0
-Sri Lanka Philatelic Bureau,6.9280856,79.85786929999999,attraction,museum,4.6,"310 McCallum Road, Colombo",[],google,110.92093514214356,0,0
-Woodnest - Summerside,7.248387999999999,79.8451248,attraction,tourist_attraction,4.3,"84 Palangathure, Negombo",[],google,118.67863330684557,0,0
-Korathota Royal Temple,6.915038,80.0021349,attraction,tourist_attraction,4.7,"W282+2V6, B174",[],google,94.97033508122648,0,0
-Sri Aanjaneyar Temple,6.8673147,79.8661651,attraction,hindu_temple,4.6,"112a Sri Saranankara Road, Dehiwala-Mount Lavinia",[],google,110.04126698057148,1,0
-Sambodhi Pagoda Temple,6.9383932,79.8420285,attraction,tourist_attraction,4.6,"WRQR+9R2, Chaithya Road, Colombo",[],google,112.70315901690559,0,0
-Christian Reformed Church of Sri Lanka,6.942084799999999,79.859072,attraction,tourist_attraction,4.0,"WVR5+RJP, Wolfendhal Lane, Colombo",[],google,110.83840829819638,0,0
-Manelwatta Temple,6.944921099999998,79.9513614,attraction,tourist_attraction,4.6,"WXW2+52M, Bollegala, Kalaniya,Sri Lanka",[],google,100.67439358755364,0,0
-Bellanwila Rajamaha Viharaya,6.8460686,79.8899933,attraction,tourist_attraction,4.8,"Dehiwala Road, Boralesgamuwa",[],google,107.52534968050476,0,0
-St. Mary's Church,7.210452999999999,79.8372024,attraction,tourist_attraction,4.7,"Main Street, No.100 Grand Street, Negombo",[],google,118.21787787653636,0,0
-Dilra Tours (OPEN),7.1020365,79.9099821,attraction,tourist_attraction,4.6,"Orexcity shopping complex, Ja-Ela",[],google,107.4406120036989,0,0
-JourneyScapes Travel,6.857984699999999,79.8636106,attraction,tourist_attraction,4.5,"No 08 2nd Lane, Dehiwala-Mount Lavinia",[],google,110.36521355767262,1,0
-Kotte Rajamaha Vihara කෝට්ටේ රජමහා විහාරය,6.881008100000001,79.9047497,attraction,tourist_attraction,4.7,"Mirihana South, Sri Jayawardenepura Kotte",[],google,105.73855981015795,0,0
-Daffodils Beach Negombo,7.238267,79.8430534,attraction,tourist_attraction,4.2,"31, Judes Mawatha Off, Beach Road, Negombo",[],google,118.53612919961263,0,0
-Excel World Entertainment Park,6.922451499999999,79.8612151,attraction,tourist_attraction,3.9,"338 T. B. Jayah Mawatha, Colombo",[],google,110.53766746775848,1,0
-Nuwara Eliya Mountains View point,6.983454699999999,80.7504763,attraction,tourist_attraction,4.3,"XQM2+95Q, Nuwara Eliya",[],google,15.3220829405909,0,0
-Handagedara Resort & Spa,5.9460481,80.45324260000001,attraction,tourist_attraction,4.4,"81740 Harbour Road, Mirissa",[],google,115.50069972339669,0,0
-Srī Vijayārāma Ancient Temple,6.245268599999999,80.0575088,attraction,tourist_attraction,4.7,"63W5+422, Dhirakkanda Buddhist Temple, Dhirakkanda Mawatha, Kaluwadumulla, Ambalangada., Ambalangoda",[],google,115.04626554994121,0,0
-Mahamevnawa Buddhist Monastery - Galle | මහමෙව්නාව භාවනා අසපුව - ගාල්ල,6.041376999999999,80.2737836,attraction,tourist_attraction,4.7,"melegoda, Wanchawala",[],google,115.6924681310325,0,0
-Hotel Hasara,6.0493841,80.2062607,attraction,tourist_attraction,3.8,"1 Wakunugoda Road, ගාල්ල",[],google,119.33570647873502,1,0
-Lunuganga,6.403383799999999,80.02187909999999,attraction,tourist_attraction,4.5,"Dedduwa, Bentota",[],google,108.1200381449011,0,0
-Sinharaja Forest Reserve,6.406990800000001,80.46002659999999,attraction,tourist_attraction,4.6,Sri Lanka,[],google,70.73275604605585,0,0
-Hotel Nawathana,5.943861900000001,80.54575659999999,attraction,tourist_attraction,4.2,"No.15, Sri Dharmarama, Mawatha, Matara",[],google,112.12676959427624,0,0
-The Long Beach Resort,5.990508000000001,80.31938199999999,attraction,tourist_attraction,3.8,"The Long Beach Resort, මාතර පාර, කොග්ගල",[],google,117.76975852946204,0,0
-YOGA REIKI MEDITATION,7.2995129,80.6484139,attraction,tourist_attraction,5.0,"142/5A Dharmashoka Mawatha, Kandy",[],google,50.120509180407275,1,1
-Rajanima Craft (Pvt) Ltd,7.284680200000001,80.6434498,attraction,tourist_attraction,4.0,"173 Rajapihilla Mawatha, Kandy",[],google,48.94003061734395,1,1
-Old Royal Palace,7.2947862,80.6410831,attraction,museum,4.5,"15 Raja Veediya, Kandy",[],google,50.04718131718462,0,1
-The Elephant Freedom Project,7.2671311,80.3806184,attraction,tourist_attraction,4.6,"Karandupona-Rambukkna Road, Hiriwadunna",[],google,66.89680720004837,0,0
-Bowatenna Reservoir | බෝවතැන්න ජලාශය,7.671418199999998,80.6668997,attraction,tourist_attraction,4.5,"MMC8+HQ6, Arangala",[],google,88.24057780228132,0,0
-Sigiri Jungle Resort,7.939288,80.740802,attraction,tourist_attraction,5.0,"WPQR+P87, Polonnaruwa, Mahasengama, Sigiriya, Sigiriya",[],google,116.12829551168278,1,0
-Gimanhala Hotel,7.879958,80.650618,attraction,tourist_attraction,4.0,"Jaffna - Kandy Highway, 754 Anuradhapura Road, Dambulla",[],google,111.23324095344596,1,0
-Hotel Mahanuge,7.957742899999999,80.9966997,attraction,tourist_attraction,4.1,26th Mile Post,[],google,118.33482244884011,0,0
-Nalanda Gedige,7.669748599999999,80.645856,attraction,tourist_attraction,4.7,"MJ9W+V8X, Gedige Road, Matale",[],google,88.65738855153019,0,0
-Martin Wickramasinghe Folk Museum,5.989937,80.328019,attraction,museum,4.6,"Matara Road, Koggala",[],google,117.34136592318109,0,0
-Hikkaduwa Lagoon Safari and Adventure kayaking,6.1033254,80.1268865,attraction,tourist_attraction,4.9,"Lahiru's Place, No 9 Dammissara Road, Dodanduwa",[],google,120.36379299642363,1,0
-Dasa beach Viwe,5.9934074,80.3071104,attraction,tourist_attraction,4.1,"05 Matara Road, Habaraduwa",[],google,118.19046500537297,0,0
-Parappudūva Island Temple,6.1115676,80.13834250000001,attraction,tourist_attraction,4.8,"446Q+J8G, Rathgama",[],google,118.83323034882218,1,0
-SP Unawatuna Lodge Guest House,6.005395999999998,80.258941,attraction,cafe,4.5,"2745+5H8, Meepegewatta, Maharamba Road, Unawatuna",[],google,119.92789743853442,0,0
-Rumassala South Beach,6.018462500000001,80.2354871,attraction,tourist_attraction,4.7,"269P+95Q, Unawatuna",[],google,120.19682979142065,0,0
-Sithuvili Gallery,6.0257719,80.21882459999999,attraction,art_gallery,4.7,"60 Leyn Baan Street, Galle",[],google,120.60928063995118,0,0
-BTR SL,6.0367169,80.2090398,attraction,tourist_attraction,4.9,"104/1/1 Colombo Road, Galle",[],google,120.27363387371341,1,0
-Sholay Villa Galle,6.038945499999999,80.22670699999999,attraction,tourist_attraction,3.9,"143 143/12 Abdul Wahab Mawatha, 143/12 Talapitiya Road, Galle",[],google,118.9122183332869,1,0
-Āriapāla Mask Museum,6.241271800000001,80.0506997,attraction,museum,4.3,"426 Main Street, Ambalangoda",[],google,115.90993632083207,0,0
-Hotel Alta Vista,6.873472899999999,81.0480231,attraction,tourist_attraction,4.0,"Wellawaya-Ella-Kumbalwela Highway, Ella",[],google,20.73740741422026,1,0
-Sigiriya,7.9542748,80.7592244,attraction,tourist_attraction,5.0,"Sigiriya Road, Sigiriya",[],google,117.56990952123618,1,0
-Ritigala Strict Natural Reserve,8.1166667,80.64999999999999,attraction,tourist_attraction,4.7,"4J8X+MX9, Palugaswewa",[],google,137.08955538103874,0,0
-Pitawala Patana Trail,7.546518000000001,80.746873,attraction,tourist_attraction,4.7,"33 Km post, Illukkumbura,, Matale",[],google,72.80149274832029,0,0
-Wasgamuwa National Park,7.7532419,80.92077370000001,attraction,tourist_attraction,4.5,"QW3C+78R, Nuwaragala",[],google,94.88361072558172,1,0
-Nā Uyana Forest Monastery | නා උයන ආරණ්‍ය සේනාසනය,7.7387408,80.51590670000002,attraction,tourist_attraction,4.8,"PGQ8+F9V, Polgahangoda",[],google,100.59201722592485,0,0
-Dambulla Royal Cave Temple and Golden Temple,7.854914099999999,80.6505699,attraction,tourist_attraction,4.5,"Kandy - Jaffna Highway, Dambulla",[],google,108.51338964268102,1,0
-Hotel Sannasa,7.8589127,80.6620717,attraction,tourist_attraction,4.0,"1st Post, Kandalama Road, Dambulla",[],google,108.68277727296278,1,0
-Hurulu Eco Park - Wild Elephant Safari,8.0584446,80.770258,attraction,tourist_attraction,4.3,"trincomalee road, Habarana",[],google,129.00205196784782,0,0
-Kashyapa Tours And Travel Sri Lanka,7.947860300000002,80.7414407,attraction,tourist_attraction,5.0,"No 207, Sigiriya",[],google,117.06711663972244,1,0
-Menikdena Archeological Reserve and Arboretum | මැණික්දෙන පුරාවිද්‍යා රක්ෂිතය සහ වෘක්ෂෝද්‍යානය,7.766630500000001,80.6403223,attraction,tourist_attraction,4.5,"QJ8R+M44, Dambulla",[],google,99.22274074098912,0,0
-Angammedilla National Park,7.925445299999999,80.92077370000001,attraction,tourist_attraction,4.4,"WWGC+58C, Diyabeduma",[],google,113.99494608366744,0,0
-Midigama Right,5.964814599999999,80.38364229999999,attraction,tourist_attraction,4.6,Asian Highway 43,[],google,116.85695517882543,0,0
-Dilana Cab Service & Tours,5.974342,80.42475379999999,attraction,tourist_attraction,5.0,"46 Hetti Weediya Weligama 81700 Hetti Weediya, Weligama",[],google,113.9118859724766,0,0
-Weherahena Poorwarama Rajamaha Viharaya - Matara | වෙහෙරහේන පුර්වාරාම රජමහා විහාරය - මාතර,5.953037999999999,80.57528599999999,attraction,tourist_attraction,4.6,"Weherahena Road, Matara",[],google,110.174373315027,0,0
-The Shrine of Our Lady of Matara,5.9432239,80.5519762,attraction,tourist_attraction,4.8,"WHV2+7QQ, Matara",[],google,111.98178941401049,0,0
-Damro Tea Factory - Labookellie Tea Lounge,7.0240568,80.7193898,attraction,tourist_attraction,4.3,A5,[],google,20.82161437987623,0,0
-Galabedda Biso Pond ගලබැද්ද බිසෝ පොකුණ,6.91683,81.38750449999999,attraction,tourist_attraction,4.5,Colombo - Batticaloa Highway,[],google,57.992370377452914,0,0
-Wilpattu National Park,8.4581819,80.0518306,attraction,tourist_attraction,4.5,Sri Lanka,[],google,194.74060842317022,0,0
-Tantirimale Rajamaha Viharaya - තන්තිරිමලේ රජමහා විහාරය,8.5736017,80.2558288,attraction,tourist_attraction,4.7,"H7F4+C8W, Thanthirimale Road, Thanthirimale",[],google,197.53234955197934,0,0
-Pankuliya Ashokaramaya (අශෝකාරාමය),8.3854823,80.4102217,attraction,tourist_attraction,4.7,"9CP6+53X, Ashokaramaya Road, Anuradhapura",[],google,172.32779329296554,0,0
-Ruwanweli Maha Seya,8.349970499999998,80.39615990000001,attraction,tourist_attraction,4.9,"Ruwanweliseya Temple, Abhayawewa Road, Anuradhapura",[],google,169.01686938365242,1,0
-Manawila Wildlife Department Bungalow,8.4859286,79.9897653,attraction,tourist_attraction,4.4,Sri Lanka,[],google,200.67163701358595,0,0
-Samadhi Buddha Statue,8.3698774,80.3981853,attraction,tourist_attraction,4.8,"999X+X73, Anuradhapura",[],google,171.05972846784877,0,0
-Hotel Moonstone,8.331613599999999,80.3668866,attraction,tourist_attraction,4.1,"Thisawewa Road Pandulagama, Anuradhapura",[],google,168.09399456272345,0,0
-Gamodh Citadel Resort - Anuradhapura,8.3640036,80.3646787,attraction,tourist_attraction,4.3,"Thanthirimale Road, Lolugaswewa",[],google,171.58119577917574,0,0
-Kithul Kanda Mountain Resort,6.858332099999999,80.0973705,attraction,tourist_attraction,4.3,"No. 07, Meepe, Ingiriya Road, Padukka",[],google,84.5901711236616,1,0
-Haus Chandra Beach Hotel,6.842429699999999,79.86343819999999,attraction,tourist_attraction,4.1,"37 Beach Road, Dehiwala-Mount Lavinia",[],google,110.47606146626303,0,0
-Dahayyagama junction,8.3287301,80.4075281,attraction,tourist_attraction,4.3,"8CH5+F2R, Maithripala Senanayake Mawatha, Anuradhapura",[],google,166.38701861484992,1,0
-Malwathu Oya Boat Safari,8.327608999999999,80.397103,attraction,tourist_attraction,5.0,"89GX+H46, Anuradhapura",[],google,166.61817989980787,1,0
-Kada Panaha Wewa,8.3209999,80.41366599999999,attraction,tourist_attraction,5.0,"8CC7+9FV, Anuradhapura",[],google,165.36418149169924,1,0
-Musthak recidency,8.323658499999997,80.407516,attraction,tourist_attraction,0.0,"8CF4+CX7, Anuradhapura",[],google,165.84986657124742,1,0
-Bicycle repair center Anudarapura,8.3155456,80.4143496,attraction,tourist_attraction,0.0,"8C87+7JX, Anuradhapura",[],google,164.7630477187913,1,0
-Kunbichchan Kulama Wewa - කුම්බිච්චන්කුලම වැව,8.3186338,80.4030367,attraction,tourist_attraction,4.8,"Kumbichchan Kulama Tank, Anuradhapura",[],google,165.46782661817213,1,0
-Nuwara wewa viewpoint,8.311351799999997,80.4036508,attraction,tourist_attraction,4.7,"K8CJ9+4X6, අනුරාධපුර පෞරාණික නගරය",[],google,164.67646210236532,1,0
-Happy Leoni Hotel,8.357708700000002,80.4239316,attraction,tourist_attraction,3.3,"Happy Leoni Hote Mihintale, Road, Anuradhapura",[],google,168.93592578363808,0,0
-Rawana Abyss,8.582018399999999,81.2453797,attraction,tourist_attraction,4.5,"H6JW+R52, Trincomalee",[],google,191.52731026222807,1,0
-Mayan Water Park,7.068894299999999,79.9022359,attraction,tourist_attraction,3.9,"3WC3+X77, 266 Road Batagama North, ජා-ඇළ",[],google,107.5839048463276,0,0
-Royal Park Land,7.0763357,79.89582899999999,attraction,landmark,4.1,"48 Mount Kalvary Road, Ja-Ela",[],google,108.42460999512859,0,0
-Miraj Tours & Rent a Car,7.264808999999999,79.89494599999999,attraction,car_rental,4.8,"01/01A ""Franklyn"" St.Theresa Rd, Katana North,, Kochchikade",[],google,114.1237339892017,0,0
-AxioTravel,7.1530194,79.87205999999999,attraction,tourist_attraction,4.6,"124 Negombo Road, Katunayake",[],google,112.80062115428322,0,0
-Sri Lanka Travel Partner Travel Agent,7.261181999999998,79.866742,attraction,travel_agency,4.6,"The Finanes Waththa, No. 33/2C Thoppuwa, Negombo",[],google,116.90203043542799,0,0
-tuktukrental.com (Tuktuk Rental Sri Lanka - Official),7.167506400000001,79.8671325,attraction,travel_agency,4.8,"No 11/A Negombo Road, Katunayake",[],google,113.73353233484409,0,0
-St. Anne's Church - Kurana,7.191215400000001,79.86046,attraction,tourist_attraction,4.6,"51 Saint Anne's Road, Negombo",[],google,115.15056897247129,0,0
-T-TEC Tours,7.205241000000002,79.840689,attraction,tourist_attraction,3.0,"35, 36 Greens Road, Negombo",[],google,117.68293133747372,1,0
-YAD POINT,8.571040499999999,81.2102944,attraction,tourist_attraction,0.0,"H6C6+C47, Trincomalee",[],google,189.51736645242295,1,0
-Mud Cove,8.5754519,81.2033569,attraction,tourist_attraction,4.5,"Cod bay, Trincomalee",[],google,189.84499509588994,1,0
-Seaview infront of School,8.5754232,81.2254731,attraction,tourist_attraction,5.0,"infront of Sinhala central college, Trincomalee",[],google,190.33908123216955,1,0
-Lake side cabana,8.5742414,81.2205383,attraction,tourist_attraction,5.0,"6th mail post, 6th Lane, Trincomalee",[],google,190.0970072385568,1,0
-City Centre,8.5813295,81.2273499,attraction,tourist_attraction,2.0,"345 Main Street, Trincomalee",[],google,191.02457374018326,1,0
-Uppuvely beach,8.595711,81.22278279999999,attraction,tourist_attraction,0.0,"H6WF+74M, Trincomalee",[],google,192.48360158724424,1,0
-திருகோணமலை நகர கடற்கரை | ත්‍රිකුණාමලය නගර වෙරළ තීරය | Trincomalee Town Beach,8.5902013,81.22614829999999,attraction,tourist_attraction,4.4,Trincomalee,[],google,191.9613032138872,1,0
-Green Bay Beach,8.587363800000002,81.2152121,attraction,tourist_attraction,5.0,"Easter Naval Command Headquarters, Trincomalee",[],google,191.40442603422306,1,0
-Aqua Creed,8.680864999999999,81.20116,attraction,tourist_attraction,4.9,"8.680865, 81.201160",[],google,201.30203409114375,0,0
-Velgam Vehera Buddhist Temple | වෙල්ගම් වෙහෙර,8.6471866,81.1696845,attraction,tourist_attraction,4.6,Vilgam Vihara Road,[],google,196.9981257373316,0,0
-Commonwealth WAR Cemetery,8.615208299999999,81.2134641,attraction,museum,4.6,"J687+39P, Nilaveli Road, Trincomalee",[],google,194.39840202302437,0,0
-Ceylon Wonders,7.164335599999998,80.57585089999999,attraction,tourist_attraction,4.0,"I, 52/1 Illawatura Road, Gampola",[],google,43.027130672112065,1,0
-Kirindi Ella Waterfall,6.6419593,80.5639401,attraction,tourist_attraction,4.7,"Kuttapitiya, Pelmadulla",[],google,43.83271777205618,0,0
-Batadombalena,6.776506499999999,80.3959493,attraction,tourist_attraction,4.5,"Q9GW+J94, Kuruwita",[],google,53.34871130429687,0,0
-Laxapana Falls,6.899600700000001,80.50104089999999,attraction,tourist_attraction,4.7,"Laxapana Falls, Laxapana",[],google,39.88747372266924,0,0
-Isha Water Park and rooms,8.6049322,81.21769619999999,attraction,tourist_attraction,3.5,Trincomalee,[],google,193.37268728916675,1,0
-Kottagala Mohideen Jumma Masjid,6.924072999999999,80.6060729,attraction,mosque,4.1,"WJF4+JCG, Kotagala",[],google,28.398686177741794,1,0
-Sathmahal Prasadaya (සත්මහල් ප්‍රාසාදය) - 51,7.947952399999999,81.0018178,attraction,tourist_attraction,4.8,"W2X2+5PP, Polonnaruwa",[],google,117.32745034070354,0,0
-1st canel jumping pot,7.941499899999999,81.0003019,attraction,tourist_attraction,3.0,"W2V5+5PM, Polonnaruwa",[],google,116.59428434520669,0,0
-Risky Swamp,7.951202899999999,81.01200949999999,attraction,tourist_attraction,3.0,"W2V5+5PM, Polonnaruwa",[],google,117.8378612080486,0,0
-Bimbuthuraawa,7.940312499999999,81.0188125,attraction,tourist_attraction,4.4,"W2R9+4G, Polonnaruwa",[],google,116.7474580274609,0,0
-Maduru Oya National Park,7.647635600000001,81.1868215,attraction,tourist_attraction,4.4,Manampitiya-Aralaganwila-Maduru Oya Rd,[],google,90.31466632386898,1,0
-Somawathiya National Park,8.169255900000001,81.20781640000001,attraction,tourist_attraction,4.5,"5695+P44, Gangapahalavila",[],google,145.97764782947405,0,0
-Sathutu Dupatha (Pleasure Island) | සතුටු දූපත,7.872153400000001,80.6327951,attraction,tourist_attraction,4.2,"Pleasure Island, දඹුල්ල",[],google,110.81731773109725,0,0
-Dambulla,7.874217000000001,80.6511287,attraction,tourist_attraction,0.0,"VMF2+MFJ, Dambulla",[],google,110.59733261478918,0,0
-Yapahuwa Rock Fortress,7.8169688,80.3110686,attraction,tourist_attraction,4.7,"R886+QCP, Maho",[],google,118.53010999144995,0,0
-Corbett's Gap අට්ටාලවෙට්ටුව,7.372764600000002,80.84087850000002,attraction,tourist_attraction,4.6,Hunnasgiriya - Meemure Road,[],google,52.41116266831148,0,0
-Pinnawala Elephant Orphanage,7.3008545,80.38885499999999,attraction,zoo,3.9,Rambukkana,[],google,68.54061272439289,0,0
-Gem Museum,6.912143,79.852988,attraction,jewelry_store,4.0,"43 Ananda Coomaraswamy Mawatha, Colombo",[],google,111.42924598903639,1,0
-Cinnamon Nature Trails,6.929325,79.84968800000001,attraction,tourist_attraction,4.3,"WRHX+PVP, Colombo",[],google,111.82725515373626,0,0
+Temple of the Tooth,7.2937812,80.63591,attraction,temple,4.5,"Sri Dalada Maligawa, commonly known in English as the Temple of the Sacred Tooth Relic, is a Buddhist temple in Kandy, Sri Lanka. It is located in the Royal Palace Complex of the former Kingdom of Kandy, which houses the relic of the tooth of the Buddha.","['https://cdn.pixabay.com/photo/2015/08/20/17/45/sri-lanka-897819_640.jpg', 'https://cdn.pixabay.com/photo/2017/03/01/05/50/sri-lanka-2107620_640.jpg', 'https://cdn.pixabay.com/photo/2013/11/03/11/58/temple-204803_1280.jpg', 'https://cdn.pixabay.com/photo/2019/05/02/14/00/kandy-4173595_640.jpg']",database,3.176489437062796,1,0
+Dematamal Viharaya| දෙමටමල් විහාරය,6.7539904,81.2880131,attraction,tourist_attraction,4.8,B522,[],google,94.28382814687129,0,0
+Tunnel NO 18/ Pattipola Tunnel [Up Country Line],6.8426174,80.83722120000002,attraction,tourist_attraction,4.8,"RRVP+2VX, Pattipola",[],google,54.028742031228624,0,0
+Moon Plains,6.9523269,80.79640409999999,attraction,tourist_attraction,4.5,"Ranhawadigama Road, Nuwara Eliya",[],google,41.14534452585751,0,0
+Upper Diyaluma Waterfall,6.734827800000001,81.03244720000001,attraction,tourist_attraction,4.8,"Colombo - Batticaloa Highway, Uva-Gampaha",[],google,75.76998126351643,0,0
+Diyawatanalla Waterfall,6.849332000000001,80.8589566,attraction,tourist_attraction,3.1,"RVX5+PHP, Gatalagamuwa - Alawathugoda Road, Alawathugoda",[],google,54.51332227303898,1,0
+St. Francis Xavier's Church,6.9773709,80.7649881,attraction,tourist_attraction,4.7,"2016 Bandaranaike Mawatha, Nuwara Eliya",[],google,37.05850614908772,0,0
+Auslink Hotel Walapane Sri Lanka,7.095043299999999,80.86279139999999,attraction,tourist_attraction,3.9,"47 Walapane - Nildandahinna Road, Walapane",[],google,33.96587841849344,0,0
+Mallipotha Tank - මාලිප්පොත වැව,7.147922899999998,81.167884,attraction,tourist_attraction,3.8,"45X9+556, Kiriwandeniya Road, Rambukkana",[],google,62.706599754593945,0,0
+Porawagala Viewpoint,6.8301766,81.0127674,attraction,tourist_attraction,4.4,"Mahaulpatha, Galkanda, Bandarawela",[],google,66.20671869061512,0,0
+Ravana's Cave,6.8644786,81.04864169999999,attraction,tourist_attraction,4.0,"V27X+QFR, Ella",[],google,66.21397829934367,1,0
+Uva Halpewatte Tea Factory Tour,6.8892883,81.0345068,attraction,tourist_attraction,4.6,"Uva Halpewatte Tea Factory, Badulla Road, Hela Halpe, Ella, Sri Lanka",[],google,63.187806276252026,0,0
+Piduruthalagala Conservation Forest,7.0216667,80.7561111,attraction,tourist_attraction,4.6,"2QC4+MC9, Nuwara Eliya",[],google,32.24541115613793,0,0
+Muthiyangana Raja Maha Vihara,6.9842184,81.0613561,attraction,tourist_attraction,4.7,"X3M6+MGQ, Station Road, Badulla",[],google,59.00457126059176,0,0
+Devon Falls,6.951407700000001,80.6300174,attraction,tourist_attraction,4.6,"XJ2J+H26, Nawalapitiya - Dimbula Road",[],google,36.03830169716842,0,0
+Weli Oya Bridge,6.767487599999999,80.8468142,attraction,tourist_attraction,4.6,"QR8W+XPW, Walhaputenna",[],google,62.01439637124969,0,0
+Ramboda Falls,7.054569199999999,80.705331,attraction,tourist_attraction,4.6,"3P34+R4G, A5, Ramboda",[],google,26.509452599519534,0,0
+Sri Lanka Philatelic Bureau,6.9280856,79.85786929999999,attraction,museum,4.6,"310 McCallum Road, Colombo",[],google,91.93491040106204,1,0
+Woodnest - Summerside,7.248387999999999,79.8451248,attraction,tourist_attraction,4.3,"84 Palangathure, Negombo",[],google,84.87277215014187,0,0
+Korathota Royal Temple,6.915038,80.0021349,attraction,tourist_attraction,4.7,"W282+2V6, B174",[],google,78.50486677552215,0,0
+Sri Aanjaneyar Temple,6.8673147,79.8661651,attraction,hindu_temple,4.6,"112a Sri Saranankara Road, Dehiwala-Mount Lavinia",[],google,94.1709874080555,1,0
+Sambodhi Pagoda Temple,6.9383932,79.8420285,attraction,tourist_attraction,4.6,"WRQR+9R2, Chaithya Road, Colombo",[],google,93.0563401828188,0,0
+Christian Reformed Church of Sri Lanka,6.942084799999999,79.859072,attraction,tourist_attraction,4.0,"WVR5+RJP, Wolfendhal Lane, Colombo",[],google,91.1700253802911,1,0
+Manelwatta Temple,6.944921099999998,79.9513614,attraction,tourist_attraction,4.6,"WXW2+52M, Bollegala, Kalaniya,Sri Lanka",[],google,81.82692594524418,0,0
+Bellanwila Rajamaha Viharaya,6.8460686,79.8899933,attraction,tourist_attraction,4.8,"Dehiwala Road, Boralesgamuwa",[],google,93.06548134446942,0,0
+St. Mary's Church,7.210452999999999,79.8372024,attraction,tourist_attraction,4.7,"Main Street, No.100 Grand Street, Negombo",[],google,85.99933278542116,0,0
+Dilra Tours (OPEN),7.1020365,79.9099821,attraction,tourist_attraction,4.6,"Orexcity shopping complex, Ja-Ela",[],google,80.02806067691493,0,0
+JourneyScapes Travel,6.857984699999999,79.8636106,attraction,tourist_attraction,4.5,"No 08 2nd Lane, Dehiwala-Mount Lavinia",[],google,94.92147907486034,1,0
+Kotte Rajamaha Vihara කෝට්ටේ රජමහා විහාරය,6.881008100000001,79.9047497,attraction,tourist_attraction,4.7,"Mirihana South, Sri Jayawardenepura Kotte",[],google,89.70800536757221,0,0
+Daffodils Beach Negombo,7.238267,79.8430534,attraction,tourist_attraction,4.2,"31, Judes Mawatha Off, Beach Road, Negombo",[],google,85.14881040402831,0,0
+Excel World Entertainment Park,6.922451499999999,79.8612151,attraction,tourist_attraction,3.9,"338 T. B. Jayah Mawatha, Colombo",[],google,91.86609139513153,1,0
+Nuwara Eliya Mountains View point,6.983454699999999,80.7504763,attraction,tourist_attraction,4.3,"XQM2+95Q, Nuwara Eliya",[],google,35.75252747848426,0,0
+Handagedara Resort & Spa,5.9460481,80.45324260000001,attraction,tourist_attraction,4.4,"81740 Harbour Road, Mirissa",[],google,148.85074513680613,0,0
+Srī Vijayārāma Ancient Temple,6.245268599999999,80.0575088,attraction,tourist_attraction,4.7,"63W5+422, Dhirakkanda Buddhist Temple, Dhirakkanda Mawatha, Kaluwadumulla, Ambalangada., Ambalangoda",[],google,129.96485599570198,0,0
+Mahamevnawa Buddhist Monastery - Galle | මහමෙව්නාව භාවනා අසපුව - ගාල්ල,6.041376999999999,80.2737836,attraction,tourist_attraction,4.7,"melegoda, Wanchawala",[],google,142.24208350172051,0,0
+Hotel Hasara,6.0493841,80.2062607,attraction,tourist_attraction,3.8,"1 Wakunugoda Road, ගාල්ල",[],google,143.5461005262417,1,0
+Lunuganga,6.403383799999999,80.02187909999999,attraction,tourist_attraction,4.5,"Dedduwa, Bentota",[],google,116.92290204351926,0,0
+Sinharaja Forest Reserve,6.406990800000001,80.46002659999999,attraction,tourist_attraction,4.6,Sri Lanka,[],google,98.01925383151848,0,0
+Hotel Nawathana,5.943861900000001,80.54575659999999,attraction,tourist_attraction,4.2,"No.15, Sri Dharmarama, Mawatha, Matara",[],google,148.22199414567777,0,0
+The Long Beach Resort,5.990508000000001,80.31938199999999,attraction,tourist_attraction,3.8,"The Long Beach Resort, මාතර පාර, කොග්ගල",[],google,146.5048278649739,0,0
+YOGA REIKI MEDITATION,7.2995129,80.6484139,attraction,tourist_attraction,5.0,"142/5A Dharmashoka Mawatha, Kandy",[],google,4.6558926936385925,1,0
+Rajanima Craft (Pvt) Ltd,7.284680200000001,80.6434498,attraction,tourist_attraction,4.0,"173 Rajapihilla Mawatha, Kandy",[],google,3.406958350487101,1,0
+Old Royal Palace,7.2947862,80.6410831,attraction,museum,4.5,"15 Raja Veediya, Kandy",[],google,3.692785518933894,1,0
+The Elephant Freedom Project,7.2671311,80.3806184,attraction,tourist_attraction,4.6,"Karandupona-Rambukkna Road, Hiriwadunna",[],google,25.768842383627383,0,0
+Bowatenna Reservoir | බෝවතැන්න ජලාශය,7.671418199999998,80.6668997,attraction,tourist_attraction,4.5,"MMC8+HQ6, Arangala",[],google,44.44892306532608,0,0
+Sigiri Jungle Resort,7.939288,80.740802,attraction,tourist_attraction,5.0,"WPQR+P87, Polonnaruwa, Mahasengama, Sigiriya, Sigiriya",[],google,75.16055656042091,1,0
+Gimanhala Hotel,7.879958,80.650618,attraction,tourist_attraction,4.0,"Jaffna - Kandy Highway, 754 Anuradhapura Road, Dambulla",[],google,67.37505714068162,1,1
+Hotel Mahanuge,7.957742899999999,80.9966997,attraction,tourist_attraction,4.1,26th Mile Post,[],google,86.83031900256685,0,0
+Nalanda Gedige,7.669748599999999,80.645856,attraction,tourist_attraction,4.7,"MJ9W+V8X, Gedige Road, Matale",[],google,44.01990835089931,0,1
+Martin Wickramasinghe Folk Museum,5.989937,80.328019,attraction,museum,4.6,"Matara Road, Koggala",[],google,146.3578293111977,0,0
+Hikkaduwa Lagoon Safari and Adventure kayaking,6.1033254,80.1268865,attraction,tourist_attraction,4.9,"Lahiru's Place, No 9 Dammissara Road, Dodanduwa",[],google,140.9705687336498,1,0
+Dasa beach Viwe,5.9934074,80.3071104,attraction,tourist_attraction,4.1,"05 Matara Road, Habaraduwa",[],google,146.49823650185604,0,0
+Parappudūva Island Temple,6.1115676,80.13834250000001,attraction,tourist_attraction,4.8,"446Q+J8G, Rathgama",[],google,139.6428147158845,0,0
+SP Unawatuna Lodge Guest House,6.005395999999998,80.258941,attraction,cafe,4.5,"2745+5H8, Meepegewatta, Maharamba Road, Unawatuna",[],google,146.5352543249449,0,0
+Rumassala South Beach,6.018462500000001,80.2354871,attraction,tourist_attraction,4.7,"269P+95Q, Unawatuna",[],google,145.85716085218073,0,0
+Sithuvili Gallery,6.0257719,80.21882459999999,attraction,art_gallery,4.7,"60 Leyn Baan Street, Galle",[],google,145.61969795184055,0,0
+BTR SL,6.0367169,80.2090398,attraction,tourist_attraction,4.9,"104/1/1 Colombo Road, Galle",[],google,144.7892105974416,1,0
+Sholay Villa Galle,6.038945499999999,80.22670699999999,attraction,tourist_attraction,3.9,"143 143/12 Abdul Wahab Mawatha, 143/12 Talapitiya Road, Galle",[],google,143.9616098723666,1,0
+Āriapāla Mask Museum,6.241271800000001,80.0506997,attraction,museum,4.3,"426 Main Street, Ambalangoda",[],google,130.71289960863444,0,0
+Hotel Alta Vista,6.873472899999999,81.0480231,attraction,tourist_attraction,4.0,"Wellawaya-Ella-Kumbalwela Highway, Ella",[],google,65.47801789619947,1,0
+Sigiriya,7.9542748,80.7592244,attraction,tourist_attraction,5.0,"Sigiriya Road, Sigiriya",[],google,77.19358475417376,1,0
+Ritigala Strict Natural Reserve,8.1166667,80.64999999999999,attraction,tourist_attraction,4.7,"4J8X+MX9, Palugaswewa",[],google,93.65914275942366,0,0
+Pitawala Patana Trail,7.546518000000001,80.746873,attraction,tourist_attraction,4.7,"33 Km post, Illukkumbura,, Matale",[],google,33.541528144803536,0,0
+Wasgamuwa National Park,7.7532419,80.92077370000001,attraction,tourist_attraction,4.5,"QW3C+78R, Nuwaragala",[],google,63.003216596227524,0,0
+Nā Uyana Forest Monastery | නා උයන ආරණ්‍ය සේනාසනය,7.7387408,80.51590670000002,attraction,tourist_attraction,4.8,"PGQ8+F9V, Polgahangoda",[],google,52.67639994302215,0,0
+Dambulla Royal Cave Temple and Golden Temple,7.854914099999999,80.6505699,attraction,tourist_attraction,4.5,"Kandy - Jaffna Highway, Dambulla",[],google,64.59516345170267,1,1
+Hotel Sannasa,7.8589127,80.6620717,attraction,tourist_attraction,4.0,"1st Post, Kandalama Road, Dambulla",[],google,65.12957933001812,1,1
+Hurulu Eco Park - Wild Elephant Safari,8.0584446,80.770258,attraction,tourist_attraction,4.3,"trincomalee road, Habarana",[],google,88.78518783574802,0,0
+Kashyapa Tours And Travel Sri Lanka,7.947860300000002,80.7414407,attraction,tourist_attraction,5.0,"No 207, Sigiriya",[],google,76.1102871115028,1,0
+Menikdena Archeological Reserve and Arboretum | මැණික්දෙන පුරාවිද්‍යා රක්ෂිතය සහ වෘක්ෂෝද්‍යානය,7.766630500000001,80.6403223,attraction,tourist_attraction,4.5,"QJ8R+M44, Dambulla",[],google,54.72964896137034,0,0
+Angammedilla National Park,7.925445299999999,80.92077370000001,attraction,tourist_attraction,4.4,"WWGC+58C, Diyabeduma",[],google,79.82232116547573,0,0
+Midigama Right,5.964814599999999,80.38364229999999,attraction,tourist_attraction,4.6,Asian Highway 43,[],google,147.906616512406,0,0
+Dilana Cab Service & Tours,5.974342,80.42475379999999,attraction,tourist_attraction,5.0,"46 Hetti Weediya Weligama 81700 Hetti Weediya, Weligama",[],google,146.14452523181816,0,0
+Weherahena Poorwarama Rajamaha Viharaya - Matara | වෙහෙරහේන පුර්වාරාම රජමහා විහාරය - මාතර,5.953037999999999,80.57528599999999,attraction,tourist_attraction,4.6,"Weherahena Road, Matara",[],google,147.07179835261522,0,0
+The Shrine of Our Lady of Matara,5.9432239,80.5519762,attraction,tourist_attraction,4.8,"WHV2+7QQ, Matara",[],google,148.25946076149705,0,0
+Damro Tea Factory - Labookellie Tea Lounge,7.0240568,80.7193898,attraction,tourist_attraction,4.3,A5,[],google,30.237629580728775,1,0
+Galabedda Biso Pond ගලබැද්ද බිසෝ පොකුණ,6.91683,81.38750449999999,attraction,tourist_attraction,4.5,Colombo - Batticaloa Highway,[],google,94.1812485903346,0,0
+Wilpattu National Park,8.4581819,80.0518306,attraction,tourist_attraction,4.5,Sri Lanka,[],google,145.39985645823788,0,0
+Tantirimale Rajamaha Viharaya - තන්තිරිමලේ රජමහා විහාරය,8.5736017,80.2558288,attraction,tourist_attraction,4.7,"H7F4+C8W, Thanthirimale Road, Thanthirimale",[],google,149.6787761640051,0,0
+Pankuliya Ashokaramaya (අශෝකාරාමය),8.3854823,80.4102217,attraction,tourist_attraction,4.7,"9CP6+53X, Ashokaramaya Road, Anuradhapura",[],google,125.49257291027897,0,0
+Ruwanweli Maha Seya,8.349970499999998,80.39615990000001,attraction,tourist_attraction,4.9,"Ruwanweliseya Temple, Abhayawewa Road, Anuradhapura",[],google,121.90541985686825,1,0
+Manawila Wildlife Department Bungalow,8.4859286,79.9897653,attraction,tourist_attraction,4.4,Sri Lanka,[],google,151.18056844968677,0,0
+Samadhi Buddha Statue,8.3698774,80.3981853,attraction,tourist_attraction,4.8,"999X+X73, Anuradhapura",[],google,124.03328877996572,0,0
+Hotel Moonstone,8.331613599999999,80.3668866,attraction,tourist_attraction,4.1,"Thisawewa Road Pandulagama, Anuradhapura",[],google,120.59211573369092,0,0
+Gamodh Citadel Resort - Anuradhapura,8.3640036,80.3646787,attraction,tourist_attraction,4.3,"Thanthirimale Road, Lolugaswewa",[],google,124.15670389415787,0,0
+Kithul Kanda Mountain Resort,6.858332099999999,80.0973705,attraction,tourist_attraction,4.3,"No. 07, Meepe, Ingiriya Road, Padukka",[],google,73.47999468498136,1,0
+Haus Chandra Beach Hotel,6.842429699999999,79.86343819999999,attraction,tourist_attraction,4.1,"37 Beach Road, Dehiwala-Mount Lavinia",[],google,95.79620423224213,0,0
+Dahayyagama junction,8.3287301,80.4075281,attraction,tourist_attraction,4.3,"8CH5+F2R, Maithripala Senanayake Mawatha, Anuradhapura",[],google,119.34575674554664,0,0
+Malwathu Oya Boat Safari,8.327608999999999,80.397103,attraction,tourist_attraction,5.0,"89GX+H46, Anuradhapura",[],google,119.44793020975496,1,0
+Kada Panaha Wewa,8.3209999,80.41366599999999,attraction,tourist_attraction,5.0,"8CC7+9FV, Anuradhapura",[],google,118.37412749903469,1,0
+Musthak recidency,8.323658499999997,80.407516,attraction,tourist_attraction,0.0,"8CF4+CX7, Anuradhapura",[],google,118.79249808580407,1,0
+Bicycle repair center Anudarapura,8.3155456,80.4143496,attraction,tourist_attraction,0.0,"8C87+7JX, Anuradhapura",[],google,117.76426737763963,1,0
+Kunbichchan Kulama Wewa - කුම්බිච්චන්කුලම වැව,8.3186338,80.4030367,attraction,tourist_attraction,4.8,"Kumbichchan Kulama Tank, Anuradhapura",[],google,118.3401699115593,1,0
+Nuwara wewa viewpoint,8.311351799999997,80.4036508,attraction,tourist_attraction,4.7,"K8CJ9+4X6, අනුරාධපුර පෞරාණික නගරය",[],google,117.53301608665427,1,0
+Happy Leoni Hotel,8.357708700000002,80.4239316,attraction,tourist_attraction,3.3,"Happy Leoni Hote Mihintale, Road, Anuradhapura",[],google,122.18755094887557,0,0
+Rawana Abyss,8.582018399999999,81.2453797,attraction,tourist_attraction,4.5,"H6JW+R52, Trincomalee",[],google,161.0942787052216,1,0
+Mayan Water Park,7.068894299999999,79.9022359,attraction,tourist_attraction,3.9,"3WC3+X77, 266 Road Batagama North, ජා-ඇළ",[],google,81.81606612825632,0,0
+Royal Park Land,7.0763357,79.89582899999999,attraction,landmark,4.1,"48 Mount Kalvary Road, Ja-Ela",[],google,82.26802193429579,0,0
+Miraj Tours & Rent a Car,7.264808999999999,79.89494599999999,attraction,car_rental,4.8,"01/01A ""Franklyn"" St.Theresa Rd, Katana North,, Kochchikade",[],google,79.33210012517971,0,0
+AxioTravel,7.1530194,79.87205999999999,attraction,tourist_attraction,4.6,"124 Negombo Road, Katunayake",[],google,82.97663737034998,0,0
+Sri Lanka Travel Partner Travel Agent,7.261181999999998,79.866742,attraction,travel_agency,4.6,"The Finanes Waththa, No. 33/2C Thoppuwa, Negombo",[],google,82.44964959030415,1,0
+tuktukrental.com (Tuktuk Rental Sri Lanka - Official),7.167506400000001,79.8671325,attraction,travel_agency,4.8,"No 11/A Negombo Road, Katunayake",[],google,83.26491217201107,0,0
+St. Anne's Church - Kurana,7.191215400000001,79.86046,attraction,tourist_attraction,4.6,"51 Saint Anne's Road, Negombo",[],google,83.6563525953422,0,0
+T-TEC Tours,7.205241000000002,79.840689,attraction,tourist_attraction,3.0,"35, 36 Greens Road, Negombo",[],google,85.66719988172639,1,0
+YAD POINT,8.571040499999999,81.2102944,attraction,tourist_attraction,0.0,"H6C6+C47, Trincomalee",[],google,158.3536062119912,1,0
+Mud Cove,8.5754519,81.2033569,attraction,tourist_attraction,4.5,"Cod bay, Trincomalee",[],google,158.48558272919107,1,0
+Seaview infront of School,8.5754232,81.2254731,attraction,tourist_attraction,5.0,"infront of Sinhala central college, Trincomalee",[],google,159.4955003594949,1,0
+Lake side cabana,8.5742414,81.2205383,attraction,tourist_attraction,5.0,"6th mail post, 6th Lane, Trincomalee",[],google,159.14759013786468,1,0
+City Centre,8.5813295,81.2273499,attraction,tourist_attraction,2.0,"345 Main Street, Trincomalee",[],google,160.17793331437335,1,0
+Uppuvely beach,8.595711,81.22278279999999,attraction,tourist_attraction,0.0,"H6WF+74M, Trincomalee",[],google,161.41937406833483,1,0
+திருகோணமலை நகர கடற்கரை | ත්‍රිකුණාමලය නගර වෙරළ තීරය | Trincomalee Town Beach,8.5902013,81.22614829999999,attraction,tourist_attraction,4.4,Trincomalee,[],google,161.01724067145042,1,0
+Green Bay Beach,8.587363800000002,81.2152121,attraction,tourist_attraction,5.0,"Easter Naval Command Headquarters, Trincomalee",[],google,160.22951300490718,1,0
+Aqua Creed,8.680864999999999,81.20116,attraction,tourist_attraction,4.9,"8.680865, 81.201160",[],google,169.15149098282438,0,0
+Velgam Vehera Buddhist Temple | වෙල්ගම් වෙහෙර,8.6471866,81.1696845,attraction,tourist_attraction,4.6,Vilgam Vihara Road,[],google,164.37681741010908,0,0
+Commonwealth WAR Cemetery,8.615208299999999,81.2134641,attraction,museum,4.6,"J687+39P, Nilaveli Road, Trincomalee",[],google,162.97509950647535,0,0
+Ceylon Wonders,7.164335599999998,80.57585089999999,attraction,tourist_attraction,4.0,"I, 52/1 Illawatura Road, Gampola",[],google,13.021614405263973,1,0
+Kirindi Ella Waterfall,6.6419593,80.5639401,attraction,tourist_attraction,4.7,"Kuttapitiya, Pelmadulla",[],google,70.6220049015505,0,0
+Batadombalena,6.776506499999999,80.3959493,attraction,tourist_attraction,4.5,"Q9GW+J94, Kuruwita",[],google,60.44518534811821,0,0
+Laxapana Falls,6.899600700000001,80.50104089999999,attraction,tourist_attraction,4.7,"Laxapana Falls, Laxapana",[],google,43.580093288340855,0,0
+Isha Water Park and rooms,8.6049322,81.21769619999999,attraction,tourist_attraction,3.5,Trincomalee,[],google,162.12189496366815,1,0
+Kottagala Mohideen Jumma Masjid,6.924072999999999,80.6060729,attraction,mosque,4.1,"WJF4+JCG, Kotagala",[],google,39.04503212798117,1,0
+Sathmahal Prasadaya (සත්මහල් ප්‍රාසාදය) - 51,7.947952399999999,81.0018178,attraction,tourist_attraction,4.8,"W2X2+5PP, Polonnaruwa",[],google,86.15889441982456,0,0
+1st canel jumping pot,7.941499899999999,81.0003019,attraction,tourist_attraction,3.0,"W2V5+5PM, Polonnaruwa",[],google,85.45342972950354,0,0
+Risky Swamp,7.951202899999999,81.01200949999999,attraction,tourist_attraction,3.0,"W2V5+5PM, Polonnaruwa",[],google,87.03340997476626,0,0
+Bimbuthuraawa,7.940312499999999,81.0188125,attraction,tourist_attraction,4.4,"W2R9+4G, Polonnaruwa",[],google,86.37468466770748,0,0
+Maduru Oya National Park,7.647635600000001,81.1868215,attraction,tourist_attraction,4.4,Manampitiya-Aralaganwila-Maduru Oya Rd,[],google,75.51779126754325,1,0
+Somawathiya National Park,8.169255900000001,81.20781640000001,attraction,tourist_attraction,4.5,"5695+P44, Gangapahalavila",[],google,119.01503462221875,0,0
+Sathutu Dupatha (Pleasure Island) | සතුටු දූපත,7.872153400000001,80.6327951,attraction,tourist_attraction,4.2,"Pleasure Island, දඹුල්ල",[],google,66.41886306894004,0,0
+Dambulla,7.874217000000001,80.6511287,attraction,tourist_attraction,0.0,"VMF2+MFJ, Dambulla",[],google,66.7412573223066,0,1
+Yapahuwa Rock Fortress,7.8169688,80.3110686,attraction,tourist_attraction,4.7,"R886+QCP, Maho",[],google,68.89095172671834,0,0
+Corbett's Gap අට්ටාලවෙට්ටුව,7.372764600000002,80.84087850000002,attraction,tourist_attraction,4.6,Hunnasgiriya - Meemure Road,[],google,27.265596653349427,1,0
+Pinnawala Elephant Orphanage,7.3008545,80.38885499999999,attraction,zoo,3.9,Rambukkana,[],google,25.008300492608495,0,0
+Gem Museum,6.912143,79.852988,attraction,jewelry_store,4.0,"43 Ananda Coomaraswamy Mawatha, Colombo",[],google,93.17943134288939,1,0
+Cinnamon Nature Trails,6.929325,79.84968800000001,attraction,tourist_attraction,4.3,"WRHX+PVP, Colombo",[],google,92.69769779082692,1,0

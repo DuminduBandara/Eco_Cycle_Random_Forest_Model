@@ -1,7 +1,6 @@
 name,latitude,longitude,type,category,rating,description,image_urls,distance_km,closest_route_point,source
-Rajanima Craft (Pvt) Ltd,7.284680200000001,80.6434498,attraction,tourist_attraction,4.0,"173 Rajapihilla Mawatha, Kandy",[],0.4843328570109251,"(7.28701, 80.64716)",google
-Moon Plains,6.9523269,80.79640409999999,attraction,tourist_attraction,4.5,"Ranhawadigama Road, Nuwara Eliya",[],0.830905101328609,"(6.9451, 80.79449)",google
-Old Royal Palace,7.2947862,80.6410831,attraction,museum,4.5,"15 Raja Veediya, Kandy",[],1.0940332923826688,"(7.28701, 80.64716)",google
-YOGA REIKI MEDITATION,7.2995129,80.6484139,attraction,tourist_attraction,5.0,"142/5A Dharmashoka Mawatha, Kandy",[],1.3971228651856493,"(7.28701, 80.64716)",google
-Temple of the Tooth,7.2937812,80.63591,attraction,temple,4.5,"Sri Dalada Maligawa, commonly known in English as the Temple of the Sacred Tooth Relic, is a Buddhist temple in Kandy, Sri Lanka. It is located in the Royal Palace Complex of the former Kingdom of Kandy, which houses the relic of the tooth of the Buddha.","['https://cdn.pixabay.com/photo/2015/08/20/17/45/sri-lanka-897819_640.jpg', 'https://cdn.pixabay.com/photo/2017/03/01/05/50/sri-lanka-2107620_640.jpg', 'https://cdn.pixabay.com/photo/2013/11/03/11/58/temple-204803_1280.jpg', 'https://cdn.pixabay.com/photo/2019/05/02/14/00/kandy-4173595_640.jpg']",1.4513986316818588,"(7.28701, 80.64716)",database
-Auslink Hotel Walapane Sri Lanka,7.095043299999999,80.86279139999999,attraction,tourist_attraction,3.9,"47 Walapane - Nildandahinna Road, Walapane",[],1.6185770050006405,"(7.08166, 80.86856)",google
+Gimanhala Hotel,7.879958,80.650618,attraction,tourist_attraction,4.0,"Jaffna - Kandy Highway, 754 Anuradhapura Road, Dambulla",[],0.6960957465629585,"(7.88621, 80.65094)",google
+Dambulla,7.874217000000001,80.6511287,attraction,tourist_attraction,0.0,"VMF2+MFJ, Dambulla",[],1.3337245558349888,"(7.88621, 80.65094)",google
+Dambulla Royal Cave Temple and Golden Temple,7.854914099999999,80.6505699,attraction,tourist_attraction,4.5,"Kandy - Jaffna Highway, Dambulla",[],1.4095010943230857,"(7.84292, 80.65471)",google
+Nalanda Gedige,7.669748599999999,80.645856,attraction,tourist_attraction,4.7,"MJ9W+V8X, Gedige Road, Matale",[],1.8610483660684607,"(7.68647, 80.64658)",google
+Hotel Sannasa,7.8589127,80.6620717,attraction,tourist_attraction,4.0,"1st Post, Kandalama Road, Dambulla",[],1.954472644560113,"(7.84292, 80.65471)",google

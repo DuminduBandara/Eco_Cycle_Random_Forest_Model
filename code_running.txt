@@ -1,10 +1,18 @@
 pip install -r requirements.txt
 
+run virtual environment-->
 python3 -m venv venv
 source venv/bin/activate
 
-run the model
+run the model-->
 python3 predict_tourism.py --start_lat 6.9271 --start_lon 79.8612 --end_lat 7.2906 --end_lon 80.6337 --model_path random_forest_model.pkl
 
 test model-->
 python3 train_tourism_classifier.py --start_lat 6.9271 --start_lon 79.8612 --end_lat 7.2906 --end_lon 80.6337
+
+
+run the fast api backend-->
+uvicorn main:app --host 0.0.0.0 --port 8000
+
+api testing ui-->
+http://127.0.0.1:8000/docs
