@@ -1,10 +1,6 @@
 name,latitude,longitude,type,category,rating,description,image_urls,distance_km,closest_route_point,source
-Sri Lanka Philatelic Bureau,6.9280856,79.85786929999999,attraction,museum,4.6,"310 McCallum Road, Colombo",[],0.38285115592166385,"(6.92716, 79.86121)",google
-Excel World Entertainment Park,6.922451499999999,79.8612151,attraction,tourist_attraction,3.9,"338 T. B. Jayah Mawatha, Colombo",[],0.5235623379388662,"(6.92716, 79.86121)",google
-Temple of the Tooth,7.2937812,80.63591,attraction,temple,4.5,"Sri Dalada Maligawa, commonly known in English as the Temple of the Sacred Tooth Relic, is a Buddhist temple in Kandy, Sri Lanka. It is located in the Royal Palace Complex of the former Kingdom of Kandy, which houses the relic of the tooth of the Buddha.","['https://cdn.pixabay.com/photo/2015/08/20/17/45/sri-lanka-897819_640.jpg', 'https://cdn.pixabay.com/photo/2017/03/01/05/50/sri-lanka-2107620_640.jpg', 'https://cdn.pixabay.com/photo/2013/11/03/11/58/temple-204803_1280.jpg', 'https://cdn.pixabay.com/photo/2019/05/02/14/00/kandy-4173595_640.jpg']",1.0253482965321736,"(7.28678, 80.62986)",database
-Cinnamon Nature Trails,6.929325,79.84968800000001,attraction,tourist_attraction,4.3,"WRHX+PVP, Colombo",[],1.294417781141108,"(6.92716, 79.86121)",google
-Rajanima Craft (Pvt) Ltd,7.284680200000001,80.6434498,attraction,tourist_attraction,4.0,"173 Rajapihilla Mawatha, Kandy",[],1.51699446112733,"(7.28678, 80.62986)",google
-Old Royal Palace,7.2947862,80.6410831,attraction,museum,4.5,"15 Raja Veediya, Kandy",[],1.5247463852268648,"(7.28678, 80.62986)",google
-Christian Reformed Church of Sri Lanka,6.942084799999999,79.859072,attraction,tourist_attraction,4.0,"WVR5+RJP, Wolfendhal Lane, Colombo",[],1.6762600821844087,"(6.92716, 79.86121)",google
-YOGA REIKI MEDITATION,7.2995129,80.6484139,attraction,tourist_attraction,5.0,"142/5A Dharmashoka Mawatha, Kandy",[],1.8863963821244887,"(7.29035, 80.63402)",google
-Gem Museum,6.912143,79.852988,attraction,jewelry_store,4.0,"43 Ananda Coomaraswamy Mawatha, Colombo",[],1.9005264375083413,"(6.92716, 79.86121)",google
+Gimanhala Hotel,7.879958,80.650618,attraction,tourist_attraction,4.0,"Jaffna - Kandy Highway, 754 Anuradhapura Road, Dambulla",[],0.6960957465629585,"(7.88621, 80.65094)",google
+Dambulla,7.874217000000001,80.6511287,attraction,tourist_attraction,0.0,"VMF2+MFJ, Dambulla",[],1.3337245558349888,"(7.88621, 80.65094)",google
+Dambulla Royal Cave Temple and Golden Temple,7.854914099999999,80.6505699,attraction,tourist_attraction,4.5,"Kandy - Jaffna Highway, Dambulla",[],1.4095010943230857,"(7.84292, 80.65471)",google
+Nalanda Gedige,7.669748599999999,80.645856,attraction,tourist_attraction,4.7,"MJ9W+V8X, Gedige Road, Matale",[],1.8610483660684607,"(7.68647, 80.64658)",google
+Hotel Sannasa,7.8589127,80.6620717,attraction,tourist_attraction,4.0,"1st Post, Kandalama Road, Dambulla",[],1.954472644560113,"(7.84292, 80.65471)",google
