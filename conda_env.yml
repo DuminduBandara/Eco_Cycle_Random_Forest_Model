@@ -1,0 +1,20 @@
+name: eco_cycle_env
+channels:
+  - defaults
+dependencies:
+  - python=3.9
+  - pip
+  - pip:
+      - azureml-core
+      - fastapi==0.115.0
+      - uvicorn==0.30.6
+      - pandas==2.2.2
+      - scikit-learn==1.5.1
+      - joblib==1.4.2
+      - haversine==2.8.1
+      - polyline==2.0.2
+      - requests==2.32.3
+      - pymongo==4.8.0
+      - folium==0.17.0
+      - pydantic==2.9.2
+      - numpy==1.26.4
