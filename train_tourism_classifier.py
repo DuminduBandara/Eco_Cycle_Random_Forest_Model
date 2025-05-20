@@ -2,17 +2,17 @@ import sys
 import requests
 import pandas as pd
 import numpy as np
-from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import accuracy_score, classification_report
 from haversine import haversine, Unit
 import polyline
-import os
-import ast
 import joblib
 from pymongo import MongoClient
 from requests.exceptions import RequestException
-import argparse
-import json 
+import os
+import ast
 
 # Base directory (current working directory)
 BASE_DIR = os.getcwd()
@@ -41,8 +41,8 @@ def safe_eval_list(value):
         print(f"Error evaluating image_urls: {value} - {e}", file=sys.stderr)
         return []
 
-def main(start_lat, start_lon, end_lat, end_lon):
-    # Step 1: Fetch Tourist Attractions Using Google Places API
+def fetch_attractions():
+    """Fetch tourist attractions from Google Places and MongoDB."""
     API_KEY = "AIzaSyAOeL-fUON761cUmmht44wZNFARhVozfe0"  # Replace with your Google API key
     BASE_URL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
     
@@ -85,6 +85,7 @@ def main(start_lat, start_lon, end_lat, end_lon):
                     "type": "attraction",
                     "category": place.get("types", [])[0] if place.get("types") else "unknown",
                     "rating": place.get("rating", 0.0),
+                    "ratings_count": place.get("user_ratings_total", 0),
                     "description": place.get("vicinity", "No description"),
                     "image_urls": [],
                     "source": "google"
@@ -94,11 +95,16 @@ def main(start_lat, start_lon, end_lat, end_lon):
     
     if not tourist_attractions:
         print("No tourist attractions fetched from Google Places API.", file=sys.stderr)
-        return {"error": "No tourist attractions fetched from Google Places API"}
+        return None, {"error": "No tourist attractions fetched from Google Places API"}
     
     df_google = pd.DataFrame(tourist_attractions)
+    try:
+        df_google.to_csv(get_file_path("tourist_attractions_google.csv"), index=False)
+        print(f"Saved Google attractions to {get_file_path('tourist_attractions_google.csv')}", file=sys.stderr)
+    except Exception as e:
+        print(f"Error saving tourist_attractions_google.csv: {e}", file=sys.stderr)
+        return None, {"error": f"Failed to save Google attractions CSV: {str(e)}"}
     
-    # Step 2: Fetch Tourist Attractions from MongoDB Atlas
     MONGO_URI = "mongodb+srv://vihi:vihi@itpcluster.bhmi6vu.mongodb.net/EcoCycle?retryWrites=true&w=majority"
     tourist_attractions = []
     try:
@@ -116,6 +122,7 @@ def main(start_lat, start_lon, end_lat, end_lon):
                     "type": doc.get("type", "attraction"),
                     "category": doc.get("category", "unknown"),
                     "rating": float(doc.get("rating", 0.0)),
+                    "ratings_count": doc.get("ratings_count", 0),
                     "description": doc.get("description", "No description"),
                     "image_urls": doc.get("image_urls", []),
                     "source": "database"
@@ -127,17 +134,29 @@ def main(start_lat, start_lon, end_lat, end_lon):
         print(f"Error connecting to MongoDB Atlas: {e}, proceeding with Google data only.", file=sys.stderr)
     
     df_db = pd.DataFrame(tourist_attractions)
-    if df_db.empty:
+    if not df_db.empty:
+        try:
+            df_db.to_csv(get_file_path("tourist_attractions_db.csv"), index=False)
+            print(f"Saved MongoDB attractions to {get_file_path('tourist_attractions_db.csv')}", file=sys.stderr)
+        except Exception as e:
+            print(f"Error saving tourist_attractions_db.csv: {e}", file=sys.stderr)
+    else:
         print("MongoDB DataFrame is empty, proceeding with Google data only.", file=sys.stderr)
-        df_db = pd.DataFrame(columns=["name", "latitude", "longitude", "type", "category", "rating", "description", "image_urls", "source"])
+        df_db = pd.DataFrame(columns=["name", "latitude", "longitude", "type", "category", "rating", "ratings_count", "description", "image_urls", "source"])
     
-    # Step 3: Combine Google and MongoDB Datasets
+    try:
+        df_google = pd.read_csv(get_file_path("tourist_attractions_google.csv"))
+    except (pd.errors.EmptyDataError, FileNotFoundError) as e:
+        print(f"Error reading tourist_attractions_google.csv: {e}", file=sys.stderr)
+        return None, {"error": "Google attractions CSV empty or not found"}
+    
     df_db = df_db.reindex(columns=df_google.columns, fill_value=pd.NA)
     
     for df in [df_google, df_db]:
         df["latitude"] = pd.to_numeric(df["latitude"], errors="coerce")
         df["longitude"] = pd.to_numeric(df["longitude"], errors="coerce")
         df["rating"] = pd.to_numeric(df["rating"], errors="coerce")
+        df["ratings_count"] = pd.to_numeric(df["ratings_count"], errors="coerce")
         df["name"] = df["name"].astype(str)
         df["type"] = df["type"].astype(str)
         df["category"] = df["category"].astype(str)
@@ -148,7 +167,7 @@ def main(start_lat, start_lon, end_lat, end_lon):
     
     df_combined = pd.concat([df_google, df_db], ignore_index=True)
     
-    def deduplicate_spatial(df, distance_threshold_km=0.5):
+    def deduplicate_spatial(df, distance_threshold_km=0.3):
         coords = df[["latitude", "longitude"]].values
         keep_indices = []
         processed = set()
@@ -183,15 +202,24 @@ def main(start_lat, start_lon, end_lat, end_lon):
         return deduplicated_df
     
     df_combined = deduplicate_spatial(df_combined)
+    try:
+        df_combined["image_urls"] = df_combined["image_urls"].apply(lambda x: str(x) if isinstance(x, list) else str([]))
+        df_combined.to_csv(get_file_path("tourist_attractions_combined.csv"), index=False)
+        print(f"Saved combined attractions to {get_file_path('tourist_attractions_combined.csv')}", file=sys.stderr)
+    except Exception as e:
+        print(f"Error saving tourist_attractions_combined.csv: {e}", file=sys.stderr)
+        return None, {"error": f"Failed to save combined attractions CSV: {str(e)}"}
     
-    # Step 4: Fetch Route Coordinates for Labeling
-    start_point = (start_lat, start_lon)
-    end_point = (end_lat, end_lon)
+    return df_combined, None
+
+def get_route_coordinates(start_lat, start_lon, end_lat, end_lon, mode="driving"):
+    """Fetch route coordinates using Google Directions API."""
+    API_KEY = "AIzaSyAOeL-fUON761cUmmht44wZNFARhVozfe0"
     DIRECTIONS_URL = "https://maps.googleapis.com/maps/api/directions/json"
     params = {
-        "origin": f"{start_point[0]},{start_point[1]}",
-        "destination": f"{end_point[0]},{end_point[1]}",
-        "mode": "driving",
+        "origin": f"{start_lat},{start_lon}",
+        "destination": f"{end_lat},{end_lon}",
+        "mode": mode,
         "key": API_KEY
     }
     try:
@@ -211,74 +239,118 @@ def main(start_lat, start_lon, end_lat, end_lon):
                 route_coords = [(lat, lon) for lat, lon in polyline.decode(encoded_polyline)]
             else:
                 print(f"Error fetching route (both driving and walking failed): {data['status']}", file=sys.stderr)
-                return {"error": f"Error fetching route: {data['status']} (tried driving and walking modes)"}
+                return None, {"error": f"Error fetching route: {data['status']} (tried driving and walking modes)"}
         else:
             print(f"Error fetching route: {data['status']}", file=sys.stderr)
-            return {"error": f"Error fetching route: {data['status']}"}
+            return None, {"error": f"Error fetching route: {data['status']}"}
     except RequestException as e:
         print(f"Error fetching route: {str(e)}", file=sys.stderr)
-        return {"error": f"Error fetching route: {str(e)}"}
+        return None, {"error": f"Error fetching route: {str(e)}"}
     
-    # Step 5: Prepare Features and Labels
+    return route_coords, None
+
+def main(start_lat, start_lon, end_lat, end_lon):
+    print(f"Current working directory: {os.getcwd()}", file=sys.stderr)
+    
+    # Fetch and combine attractions
+    df_combined, error = fetch_attractions()
+    if error:
+        return error
+    
+    # Fetch route coordinates for labeling
+    route_coords, error = get_route_coordinates(start_lat, start_lon, end_lat, end_lon)
+    if error:
+        return error
+    
+    # Prepare features and labels
     user_location = (start_lat, start_lon)
     df_combined["distance_to_user"] = df_combined.apply(
         lambda row: haversine(user_location, (row["latitude"], row["longitude"]), unit=Unit.KILOMETERS), axis=1
     )
     
-    # Label attractions as relevant if within 2 km of the route
-    df_combined["relevant"] = 0
-    route_coords_list = list(zip(df_combined["latitude"], df_combined["longitude"]))
+    # Compute distance_to_segment
+    route_coords_list = list(zip([coord[0] for coord in route_coords], [coord[1] for coord in route_coords]))
+    df_combined["distance_to_segment"] = float("inf")
     for idx, row in df_combined.iterrows():
         spot_coord = (row["latitude"], row["longitude"])
-        for route_coord in route_coords_list[::5]:
+        min_distance = float("inf")
+        for route_coord in route_coords_list[::2]:
+            distance = haversine(route_coord, spot_coord, unit=Unit.KILOMETERS)
+            min_distance = min(min_distance, distance)
+        df_combined.at[idx, "distance_to_segment"] = min_distance
+    
+    # Label attractions as relevant if within 2 km of the route
+    df_combined["relevant"] = 0
+    for idx, row in df_combined.iterrows():
+        spot_coord = (row["latitude"], row["longitude"])
+        for route_coord in route_coords_list[::2]:
             distance = haversine(route_coord, spot_coord, unit=Unit.KILOMETERS)
             if distance <= 2:
                 df_combined.at[idx, "relevant"] = 1
                 break
     
-    X = df_combined[["latitude", "longitude", "rating", "distance_to_user"]]
+    # Prepare feature matrix and target
+    X = df_combined[["latitude", "longitude", "rating", "ratings_count", "distance_to_user", "distance_to_segment"]].fillna(0)
     y = df_combined["relevant"]
     
-    # Step 6: Train Random Forest Classifier
-    unique_y_classes = np.unique(y)
-    if len(unique_y_classes) < 2:
-        print("Error: Only one class present in y. Cannot train classifier.", file=sys.stderr)
-        return {"error": "Only one class present in target variable"}
+    # Split the data
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
     
+    # Scale the features
+    scaler = StandardScaler()
+    X_train_scaled = scaler.fit_transform(X_train)
+    X_test_scaled = scaler.transform(X_test)
+    
+    # Train Random Forest with GridSearchCV
+    param_grid = {
+        'n_estimators': [100, 200],
+        'max_depth': [10, 20, None],
+        'min_samples_split': [2, 5],
+        'min_samples_leaf': [1, 2]
+    }
+    rf = RandomForestClassifier(random_state=42)
+    grid_search = GridSearchCV(rf, param_grid, cv=5, scoring='accuracy', n_jobs=-1)
+    grid_search.fit(X_train_scaled, y_train)
+    
+    # Evaluate the best model
+    best_model = grid_search.best_estimator_
+    y_pred = best_model.predict(X_test_scaled)
+    accuracy = accuracy_score(y_test, y_pred)
+    print(f"Best parameters: {grid_search.best_params_}", file=sys.stderr)
+    print(f"Accuracy: {accuracy:.2f}", file=sys.stderr)
+    print(classification_report(y_test, y_pred, labels=[0, 1], zero_division=0), file=sys.stderr)
+    
+    # Save the model and scaler
     try:
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
-    except ValueError:
-        print("Warning: Stratified split failed, using non-stratified split.", file=sys.stderr)
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    
-    clf = RandomForestClassifier(n_estimators=100, random_state=42)
-    clf.fit(X_train, y_train)
-    
-    try:
-        joblib.dump(clf, get_file_path("random_forest_model.pkl"))
-        print("Random Forest model saved as random_forest_model.pkl", file=sys.stderr)
+        model_path = get_file_path("random_forest_model.pkl")
+        scaler_path = get_file_path("scaler.pkl")
+        joblib.dump(best_model, model_path)
+        joblib.dump(scaler, scaler_path)
+        print(f"Model saved to: {model_path}", file=sys.stderr)
+        print(f"Scaler saved to: {scaler_path}", file=sys.stderr)
+        # Verify files exist
+        if not os.path.exists(model_path):
+            raise FileNotFoundError(f"Model file {model_path} was not created.")
+        if not os.path.exists(scaler_path):
+            raise FileNotFoundError(f"Scaler file {scaler_path} was not created.")
     except Exception as e:
-        print(f"Error saving random_forest_model.pkl: {e}", file=sys.stderr)
-        return {"error": f"Failed to save Random Forest model: {str(e)}"}
+        print(f"Error saving model or scaler: {e}", file=sys.stderr)
+        return {"error": f"Failed to save model or scaler: {str(e)}"}
     
-    return {"status": "Model trained and saved successfully"}
+    return {"message": "Training completed successfully", "accuracy": accuracy}
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Train tourism classifier with start and end coordinates.")
+    import argparse
+    parser = argparse.ArgumentParser(description="Train a tourism attraction classifier.")
     parser.add_argument("--start_lat", type=float, required=True, help="Starting latitude")
     parser.add_argument("--start_lon", type=float, required=True, help="Starting longitude")
     parser.add_argument("--end_lat", type=float, required=True, help="Ending latitude")
     parser.add_argument("--end_lon", type=float, required=True, help="Ending longitude")
     args = parser.parse_args()
     
-    # Validate coordinates
-    if not (-90 <= args.start_lat <= 90 and -180 <= args.start_lon <= 180 and
-            -90 <= args.end_lat <= 90 and -180 <= args.end_lon <= 180):
-        print("Error: Invalid coordinates", file=sys.stderr)
-        sys.exit(1)
-    
-    # Run the main function
     result = main(args.start_lat, args.start_lon, args.end_lat, args.end_lon)
-    
-    # Print JSON result
-    print(json.dumps(result, indent=2))
+    if "error" in result:
+        print(result["error"], file=sys.stderr)
+        sys.exit(1)
+    else:
+        print(result["message"], file=sys.stderr)
