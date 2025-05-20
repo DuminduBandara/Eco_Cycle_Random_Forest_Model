@@ -225,7 +225,11 @@ def get_route_coordinates(start_lat, start_lon, end_lat, end_lon, mode="driving"
         if data["status"] == "OK":
             encoded_polyline = data["routes"][0]["overview_polyline"]["points"]
             route_coords = [(lat, lon) for lat, lon in polyline.decode(encoded_polyline)]
+            return route_coords, None
         elif data["status"] == "ZERO_RESULTS":
+            print(f"ZERO_RESULTS: No route found for ({start_lat}, {start_lon}) to ({end_lat}, {end_lon})", file=sys.stderr)
+            return None, {"error": "No route found for the selected locations", "code": "ZERO_RESULTS"}
+        else:
             params["mode"] = "walking"
             response = requests.get(DIRECTIONS_URL, params=params)
             response.raise_for_status()
@@ -233,15 +237,13 @@ def get_route_coordinates(start_lat, start_lon, end_lat, end_lon, mode="driving"
             if data["status"] == "OK":
                 encoded_polyline = data["routes"][0]["overview_polyline"]["points"]
                 route_coords = [(lat, lon) for lat, lon in polyline.decode(encoded_polyline)]
+                return route_coords, None
             else:
                 print(f"Error fetching route (both driving and walking failed): {data['status']}", file=sys.stderr)
                 return None, {"error": f"Error fetching route: {data['status']} (tried driving and walking modes)"}
-        else:
-            print(f"Error fetching route: {data['status']}", file=sys.stderr)
-            return None, {"error": f"Error fetching route: {data['status']}"}
     except RequestException as e:
         print(f"Error fetching route: {str(e)}", file=sys.stderr)
-        return None, {"error": f"Error fetching route: {str(e)}"}
+        return None, {"error": f"Error fetching route: {str(e)}", "code": "REQUEST_ERROR"}
     
     route_df = pd.DataFrame(route_coords, columns=["latitude", "longitude"])
     try:
@@ -336,6 +338,8 @@ def predict_attractions(start_lat, start_lon, end_lat, end_lon, model_path, scal
     # Step 3: Fetch Route Coordinates
     route_coords, error = get_route_coordinates(start_lat, start_lon, end_lat, end_lon)
     if error:
+        if error.get("code") == "ZERO_RESULTS":
+            return {"error": error["error"], "code": "ZERO_RESULTS"}  # Return with 200 status in main.py
         return error
     
     # Step 4: Filter Attractions Within 2 km
