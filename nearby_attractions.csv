@@ -1,13 +1,4 @@
 name,latitude,longitude,type,category,rating,ratings_count,description,image_urls,distance_km,closest_route_point,source,distance_to_segment
-Green Bay Beach,8.587363800000002,81.2152121,attraction,tourist_attraction,5.0,2,"Easter Naval Command Headquarters, Trincomalee",[],0.0004815103436776588,"(8.58736, 81.21521)",google,0.0004815103436776588
-Shymi Pigeon Island & whale Watching,8.5918026,81.22513070000001,attraction,tourist_attraction,2.5,2,"Thirukkadaloor, Krishnapuri, Trincomalee",[],1.1974089807876924,"(8.58736, 81.21521)",google,1.1974089807876924
-திருகோணமலை நகர கடற்கரை | ත්‍රිකුණාමලය නගර වෙරළ තීරය | Trincomalee Town Beach,8.5973769,81.2232059,attraction,tourist_attraction,4.4,203,Trincomalee,[],1.4189711907943288,"(8.58736, 81.21521)",google,1.4189711907943288
-Aqua Creed,8.680864999999999,81.20116,attraction,tourist_attraction,4.9,15,"8.680865, 81.201160",[],1.4486827562869984,"(8.66831, 81.19764)",google,1.4486827562869984
-City Centre,8.5813295,81.2273499,attraction,tourist_attraction,2.0,1,"345 Main Street, Trincomalee",[],1.4937457441111703,"(8.58736, 81.21521)",google,1.4937457441111703
-Lake side cabana,8.5742414,81.2205383,attraction,tourist_attraction,5.0,1,"6th mail post, 6th Lane, Trincomalee",[],1.5719713256540633,"(8.58736, 81.21521)",google,1.5719713256540633
-Seaview infront of School,8.5754232,81.2254731,attraction,tourist_attraction,5.0,1,"infront of Sinhala central college, Trincomalee",[],1.7421584019226268,"(8.58736, 81.21521)",google,1.7421584019226268
-Mud Cove,8.5754519,81.2033569,attraction,tourist_attraction,4.5,4,"Cod bay, Trincomalee",[],1.8578920701417772,"(8.58736, 81.21521)",google,1.8578920701417772
-YAD POINT,8.571040499999999,81.2102944,attraction,tourist_attraction,0.0,0,"H6C6+C47, Trincomalee",[],1.8934255916220515,"(8.58736, 81.21521)",google,1.8934255916220515
-Commonwealth WAR Cemetery,8.615208299999999,81.2134641,attraction,museum,4.6,38,"J687+39P, Nilaveli Road, Trincomalee",[],1.9530293995879526,"(8.59828, 81.2182)",google,1.9530293995879526
-Isha Water Park and rooms,8.6049322,81.21769619999999,attraction,tourist_attraction,3.5,142,Trincomalee,[],1.972969593475817,"(8.58736, 81.21521)",google,1.972969593475817
-Orr's Hill Army Museum,8.5695593,81.21330689999999,attraction,museum,4.5,708,"H697+R8F, Trincomalee",[],1.9903799035888774,"(8.58736, 81.21521)",google,1.9903799035888774
+Lunuganga,6.403383799999999,80.02187909999999,attraction,tourist_attraction,4.5,862,"Dedduwa, Bentota",[],1.972374565074282,"(6.40254, 80.00405)",google,1.972374565074282
+Āriapāla Mask Museum,6.241271800000001,80.0506997,attraction,museum,4.3,1059,"426 Main Street, Ambalangoda",[],1.9748430050579717,"(6.25542, 80.0399)",google,1.9748430050579717
+Srī Vijayārāma Ancient Temple,6.245268599999999,80.0575088,attraction,tourist_attraction,4.7,161,"63W5+422, Dhirakkanda Buddhist Temple, Dhirakkanda Mawatha, Kaluwadumulla, Ambalangada., Ambalangoda",[],1.9875170263359292,"(6.25325, 80.04142)",google,1.9875170263359292

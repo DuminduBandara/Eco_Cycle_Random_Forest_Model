@@ -260,6 +260,12 @@ def find_nearby_attractions(route_coords, df, filename="nearby_attractions.csv")
         print(f"Error processing image_urls in DataFrame: {e}", file=sys.stderr)
         return None, {"error": f"Failed to process image_urls: {str(e)}"}
     
+    # Validate required columns
+    required_columns = ["name", "latitude", "longitude", "type", "category", "rating", "ratings_count", "description", "image_urls", "source"]
+    for col in required_columns:
+        if col not in df.columns:
+            df[col] = "Unknown Attraction" if col == "name" else 0.0 if col in ["latitude", "longitude", "rating", "ratings_count"] else [] if col == "image_urls" else "unknown"
+    
     route_coords_list = list(zip([coord[0] for coord in route_coords], [coord[1] for coord in route_coords]))
     
     nearby_attractions = []
