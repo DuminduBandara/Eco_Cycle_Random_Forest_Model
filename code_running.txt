@@ -19,3 +19,37 @@ http://127.0.0.1:8000/docs
 
 post api testing -->
 http://0.0.0.0:8000/predict
+
+locations adding api-->
+http://0.0.0.0:8000/store_location
+
+json input-->
+
+{
+    "name": "Temple of Tooth",
+    "latitude": 9.7937885,
+    "longitude": 80.2209773,
+    "type": "temple",
+    "category": "Cultural",
+    "rating": 4.8,
+    "description": "The Temple of the Sacred Tooth Relic is a Buddhist temple in Kandy, Sri Lanka. It is considered one of the most sacred places in the Buddhist world.",
+    "image_urls": [
+      "https://cdn.pixabay.com/photo/2015/08/20/17/45/sri-lanka-897819_960_720.jpg",
+      "https://cdn.pixabay.com/photo/2014/03/06/20/31/temple-of-the-tooth-281135_640.jpg",
+      "https://cdn.pixabay.com/photo/2013/11/03/11/58/temple-204803_960_720.jpg",
+      "https://cdn.pixabay.com/photo/2017/03/01/05/50/sri-lanka-2107620_960_720.jpg"
+    ],
+    "source": "Database"
+}
+
+locations fetch-->
+http://0.0.0.0:8000/predict
+
+json input-->
+
+{
+        "start_lat": 6.9271,
+        "start_lon": 79.8612,
+        "end_lat": 7.2906,
+        "end_lon": 80.6337
+}
