@@ -2,8 +2,18 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import os
 from predict_tourism import predict_attractions, predict_return_route
+from pymongo import MongoClient
+from typing import List
+import datetime
 
 app = FastAPI()
+
+# MongoDB setup with hardcoded URL
+# TODO: Replace with your actual MongoDB Atlas URL
+MONGODB_URI = "mongodb+srv://vihi:vihi@itpcluster.bhmi6vu.mongodb.net/EcoCycle?retryWrites=true&w=majority"
+mongo_client = MongoClient(MONGODB_URI)
+db = mongo_client["EcoCycle"]
+locations_collection = db["locations"]
 
 # Base directory (same as FastAPI app)
 BASE_DIR = os.getcwd()
@@ -12,7 +22,7 @@ def get_file_path(filename):
     """Helper function to get the full path for files."""
     return os.path.join(BASE_DIR, filename)
 
-# Pydantic model for request validation
+# Pydantic model for request validation (existing)
 class Coordinates(BaseModel):
     start_lat: float
     start_lon: float
@@ -24,6 +34,18 @@ class CurrentLocation(BaseModel):
     current_lon: float
     start_lat: float
     start_lon: float
+
+# Pydantic model for location data
+class Location(BaseModel):
+    name: str
+    latitude: float
+    longitude: float
+    type: str
+    category: str
+    rating: float
+    description: str
+    image_urls: List[str]
+    source: str
 
 @app.post("/predict")
 async def predict_tourism(coords: Coordinates):
@@ -90,6 +112,56 @@ async def get_return_route(loc: CurrentLocation):
         raise e
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Server error: {str(e)}")
+
+@app.post("/store_location")
+async def store_location(location: Location):
+    try:
+        # Validate coordinates
+        if not (-90 <= location.latitude <= 90 and -180 <= location.longitude <= 180):
+            raise HTTPException(status_code=400, detail="Invalid latitude or longitude values")
+
+        # Validate rating
+        if not (0 <= location.rating <= 5):
+            raise HTTPException(status_code=400, detail="Rating must be between 0 and 5")
+
+        # Validate image_urls
+        if not all(isinstance(url, str) and url.startswith('http') for url in location.image_urls):
+            raise HTTPException(status_code=400, detail="All image_urls must be valid HTTP URLs")
+
+        # Prepare document for MongoDB
+        location_doc = {
+            "name": location.name,
+            "latitude": location.latitude,
+            "longitude": location.longitude,
+            "type": location.type,
+            "category": location.category,
+            "rating": location.rating,
+            "description": location.description,
+            "image_urls": location.image_urls,
+            "source": location.source,
+            "created_at": datetime.datetime.utcnow()
+        }
+
+        # Check for duplicate location (same name and coordinates)
+        existing_location = locations_collection.find_one({
+            "name": location.name,
+            "latitude": location.latitude,
+            "longitude": location.longitude
+        })
+        if existing_location:
+            raise HTTPException(status_code=400, detail="Location with same name and coordinates already exists")
+
+        # Insert into MongoDB
+        result = locations_collection.insert_one(location_doc)
+        return {
+            "message": "Location stored successfully",
+            "id": str(result.inserted_id)
+        }
+
+    except HTTPException as e:
+        raise e
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to store location: {str(e)}")
 
 if __name__ == "__main__":
     import uvicorn
