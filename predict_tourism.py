@@ -334,6 +334,15 @@ def predict_attractions(start_lat, start_lon, end_lat, end_lon, model_path, scal
         print(f"Error loading scaler: {e}", file=sys.stderr)
         return {"error": f"Failed to load scaler: {str(e)}"}
     
+    # Load training metrics
+    training_metrics = {}
+    try:
+        with open(get_file_path("training_metrics.json"), "r") as f:
+            training_metrics = json.load(f)
+        print(f"Loaded training metrics from {get_file_path('training_metrics.json')}", file=sys.stderr)
+    except Exception as e:
+        print(f"Error loading training_metrics.json: {e}, proceeding without training metrics.", file=sys.stderr)
+    
     # Step 2: Fetch and Combine Attractions
     df_combined, error = fetch_attractions()
     if error:
@@ -373,6 +382,7 @@ def predict_attractions(start_lat, start_lon, end_lat, end_lon, model_path, scal
     
     # Predict using the loaded model
     df_combined["predicted_relevant"] = clf.predict(X_scaled)
+    df_combined["prediction_probability"] = clf.predict_proba(X_scaled)[:, 1]  # Probability for positive class
     
     # Generate ground truth labels for metrics (within 2 km of the route)
     df_combined["relevant"] = 0
@@ -533,14 +543,15 @@ def predict_attractions(start_lat, start_lon, end_lat, end_lon, model_path, scal
     except Exception as e:
         print(f"Error saving nearby_route_locations_map.html: {e}", file=sys.stderr)
     
-    # Merge classification predictions into nearby_df
+    # Merge classification predictions and probabilities into nearby_df
     if not nearby_df.empty:
         nearby_df = nearby_df.merge(
-            df_combined[["name", "latitude", "longitude", "predicted_relevant"]],
+            df_combined[["name", "latitude", "longitude", "predicted_relevant", "prediction_probability"]],
             on=["name", "latitude", "longitude"],
             how="left"
         )
         nearby_df["predicted_relevant"] = nearby_df["predicted_relevant"].fillna(0).astype(int)
+        nearby_df["prediction_probability"] = nearby_df["prediction_probability"].fillna(0.0)
         nearby_df["segment_id"] = nearby_df["segment_id"].fillna(-1).astype(int)
     
     # Prepare JSON output
@@ -562,6 +573,12 @@ def predict_attractions(start_lat, start_lon, end_lat, end_lon, model_path, scal
         "false_positives": len(false_positives),
         "false_negatives": len(false_negatives)
     }
+    if training_metrics:
+        metrics.update({
+            "training_confusion_matrix": training_metrics.get("confusion_matrix", {}),
+            "training_cross_validation_scores": training_metrics.get("cross_validation_scores", {}),
+            "training_accuracy": training_metrics.get("accuracy", 0.0)
+        })
     
     result = {
         "attractions": attractions,
@@ -608,6 +625,15 @@ def predict_return_route(current_lat, current_lon, start_lat, start_lon, model_p
     except Exception as e:
         print(f"Error loading scaler: {e}", file=sys.stderr)
         return {"error": f"Failed to load scaler: {str(e)}"}
+    
+    # Load training metrics
+    training_metrics = {}
+    try:
+        with open(get_file_path("training_metrics.json"), "r") as f:
+            training_metrics = json.load(f)
+        print(f"Loaded training metrics from {get_file_path('training_metrics.json')}", file=sys.stderr)
+    except Exception as e:
+        print(f"Error loading training_metrics.json: {e}, proceeding without training metrics.", file=sys.stderr)
     
     # Step 2: Fetch and Combine Attractions
     df_combined, error = fetch_attractions()
@@ -696,6 +722,7 @@ def predict_return_route(current_lat, current_lon, start_lat, start_lon, model_p
     
     # Predict using the loaded model
     df_combined["predicted_relevant"] = clf.predict(X_scaled)
+    df_combined["prediction_probability"] = clf.predict_proba(X_scaled)[:, 1]  # Probability for positive class
     
     # Step 7: Generate HTML Map for Return Route
     CLUSTER_COLOR = 'blue'
@@ -797,11 +824,12 @@ def predict_return_route(current_lat, current_lon, start_lat, start_lon, model_p
     # Step 8: Prepare JSON Output for Return Route
     if not nearby_return_df.empty:
         nearby_return_df = nearby_return_df.merge(
-            df_combined[["name", "latitude", "longitude", "predicted_relevant"]],
+            df_combined[["name", "latitude", "longitude", "predicted_relevant", "prediction_probability"]],
             on=["name", "latitude", "longitude"],
             how="left"
         )
         nearby_return_df["predicted_relevant"] = nearby_return_df["predicted_relevant"].fillna(0).astype(int)
+        nearby_return_df["prediction_probability"] = nearby_return_df["prediction_probability"].fillna(0.0)
         nearby_return_df["segment_id"] = nearby_return_df["segment_id"].fillna(-1).astype(int)
     
     return_attractions = nearby_return_df.to_dict(orient="records") if not nearby_return_df.empty else []
@@ -817,7 +845,12 @@ def predict_return_route(current_lat, current_lon, start_lat, start_lon, model_p
     result = {
         "attractions": return_attractions,
         "route_coordinates": return_route_coordinates,
-        "generated_files": generated_files
+        "generated_files": generated_files,
+        "metrics": {
+            "training_confusion_matrix": training_metrics.get("confusion_matrix", {}),
+            "training_cross_validation_scores": training_metrics.get("cross_validation_scores", {}),
+            "training_accuracy": training_metrics.get("accuracy", 0.0)
+        }
     }
     
     # Save JSON output
