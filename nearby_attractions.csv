@@ -1,4 +1,7 @@
 name,latitude,longitude,type,category,rating,ratings_count,description,image_urls,distance_km,closest_route_point,source,distance_to_segment
-Porawagala Viewpoint,6.8301766,81.0127674,attraction,tourist_attraction,4.4,374,"Mahaulpatha, Galkanda, Bandarawela",[],1.8345940923387176,"(6.82446, 80.99718)",google,1.8345940923387176
-Moon Plains,6.9523269,80.79640409999999,attraction,tourist_attraction,4.5,2683,"Ranhawadigama Road, Nuwara Eliya",[],1.8692038174544499,"(6.95386, 80.77954)",google,1.8692038174544499
-St. Francis Xavier's Church,6.9773709,80.7649881,attraction,tourist_attraction,4.7,195,"2016 Bandaranaike Mawatha, Nuwara Eliya",[],1.9146434284739968,"(6.96069, 80.76929)",google,1.9146434284739968
+Gimanhala Hotel,7.879958,80.650618,attraction,tourist_attraction,4.0,1288,"Jaffna - Kandy Highway, 754 Anuradhapura Road, Dambulla",[],1.780017255344618,"(7.86517, 80.64443)",google,1.780017255344618
+Ibankatuwa Tanke,7.869492800000001,80.6356519,attraction,tourist_attraction,0.0,0,"VJ9P+Q7R, Ibbankatuwa Tank Road, Dambulla",[],1.8983602674838782,"(7.85248, 80.63709)",google,1.8983602674838782
+Dambulla Royal Cave Temple and Golden Temple,7.854914099999999,80.6505699,attraction,tourist_attraction,4.5,13331,"Kandy - Jaffna Highway, Dambulla",[],1.8988529378143573,"(7.84728, 80.63515)",google,1.8988529378143573
+Salu Apullana Wewa Lake,7.8663483,80.6428114,attraction,tourist_attraction,0.0,0,"VJ8V+PCJ, Dambulla",[],1.9126819889327802,"(7.85059, 80.63585)",google,1.9126819889327802
+Hotel Sannasa,7.8589127,80.6620717,attraction,tourist_attraction,4.0,353,"1st Post, Kandalama Road, Dambulla",[],1.9596152083232363,"(7.86967, 80.64798)",google,1.9596152083232363
+Dambulla,7.874217000000001,80.6511287,attraction,tourist_attraction,0.0,0,"VMF2+MFJ, Dambulla",[],1.995669480584027,"(7.85974, 80.64042)",google,1.995669480584027

@@ -42,7 +42,7 @@ def safe_eval_list(value):
 
 def fetch_attractions():
     """Fetch tourist attractions from Google Places and MongoDB."""
-    API_KEY = "AIzaSyAOeL-fUON761cUmmht44wZNFARhVozfe0"  # Replace with your Google API key
+    API_KEY = "AIzaSyCwXu_hZC6f6M1tuez0hWwxR0lpFg8rqxg"  # Replace with your Google API key
     BASE_URL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
     
     locations = [
@@ -210,7 +210,7 @@ def fetch_attractions():
 
 def get_route_coordinates(start_lat, start_lon, end_lat, end_lon, mode="driving"):
     """Fetch route coordinates using Google Directions API."""
-    API_KEY = "AIzaSyAOeL-fUON761cUmmht44wZNFARhVozfe0"
+    API_KEY = "AIzaSyCwXu_hZC6f6M1tuez0hWwxR0lpFg8rqxg"
     DIRECTIONS_URL = "https://maps.googleapis.com/maps/api/directions/json"
     params = {
         "origin": f"{start_lat},{start_lon}",
@@ -646,7 +646,7 @@ def predict_return_route(current_lat, current_lon, start_lat, start_lon, model_p
         return error
     
     # Step 4: Fetch Return Route with Non-Redundancy
-    API_KEY = "AIzaSyAOeL-fUON761cUmmht44wZNFARhVozfe0"
+    API_KEY = "AIzaSyCwXu_hZC6f6M1tuez0hWwxR0lpFg8rqxg"
     DIRECTIONS_URL = "https://maps.googleapis.com/maps/api/directions/json"
     params = {
         "origin": f"{current_lat},{current_lon}",
