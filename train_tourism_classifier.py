@@ -3,9 +3,9 @@ import requests
 import pandas as pd
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.model_selection import train_test_split, GridSearchCV, cross_val_score
 from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from haversine import haversine, Unit
 import polyline
 import joblib
@@ -13,6 +13,7 @@ from pymongo import MongoClient
 from requests.exceptions import RequestException
 import os
 import ast
+import json
 
 # Base directory (current working directory)
 BASE_DIR = os.getcwd()
@@ -301,24 +302,59 @@ def main(start_lat, start_lon, end_lat, end_lon):
     X_train_scaled = scaler.fit_transform(X_train)
     X_test_scaled = scaler.transform(X_test)
     
-    # Train Random Forest with GridSearchCV
+    # Expanded parameter grid for better tuning
     param_grid = {
-        'n_estimators': [100, 200],
-        'max_depth': [10, 20, None],
-        'min_samples_split': [2, 5],
-        'min_samples_leaf': [1, 2]
+        'n_estimators': [50, 100, 200, 300],
+        'max_depth': [5, 10, 15, 20, None],
+        'min_samples_split': [2, 5, 10],
+        'min_samples_leaf': [1, 2, 4],
+        'max_features': ['sqrt', 'log2', None]
     }
-    rf = RandomForestClassifier(random_state=42)
-    grid_search = GridSearchCV(rf, param_grid, cv=5, scoring='accuracy', n_jobs=-1)
+    
+    # Train Random Forest with GridSearchCV
+    rf = RandomForestClassifier(random_state=42, class_weight='balanced')
+    grid_search = GridSearchCV(rf, param_grid, cv=5, scoring='accuracy', n_jobs=-1, verbose=1)
     grid_search.fit(X_train_scaled, y_train)
     
     # Evaluate the best model
     best_model = grid_search.best_estimator_
     y_pred = best_model.predict(X_test_scaled)
+    y_pred_proba = best_model.predict_proba(X_test_scaled)[:, 1]  # Probabilities for positive class
     accuracy = accuracy_score(y_test, y_pred)
+    
+    # Compute confusion matrix
+    cm = confusion_matrix(y_test, y_pred, labels=[0, 1])
+    cm_dict = {
+        "true_negatives": int(cm[0, 0]),
+        "false_positives": int(cm[0, 1]),
+        "false_negatives": int(cm[1, 0]),
+        "true_positives": int(cm[1, 1])
+    }
+    
+    # Compute cross-validation scores
+    cv_scores = cross_val_score(best_model, X_train_scaled, y_train, cv=5, scoring='accuracy')
+    cv_scores_dict = {
+        "scores": cv_scores.tolist(),
+        "mean": float(cv_scores.mean()),
+        "std": float(cv_scores.std())
+    }
+    
+    # Compute prediction probabilities for test set
+    proba_df = pd.DataFrame({
+        "latitude": X_test["latitude"],
+        "longitude": X_test["longitude"],
+        "probability": y_pred_proba
+    })
+    
+    # Check if accuracy is within the desired range (0.85 to 0.95)
+    if not (0.85 <= accuracy <= 0.95):
+        print(f"Warning: Model accuracy {accuracy:.2f} is outside the desired range (0.85–0.95). Consider retraining with different parameters.", file=sys.stderr)
+    
     print(f"Best parameters: {grid_search.best_params_}", file=sys.stderr)
     print(f"Accuracy: {accuracy:.2f}", file=sys.stderr)
     print(classification_report(y_test, y_pred, labels=[0, 1], zero_division=0), file=sys.stderr)
+    print(f"Confusion Matrix: {cm_dict}", file=sys.stderr)
+    print(f"Cross-validation Scores: {cv_scores_dict}", file=sys.stderr)
     
     # Save the model and scaler
     try:
@@ -337,7 +373,37 @@ def main(start_lat, start_lon, end_lat, end_lon):
         print(f"Error saving model or scaler: {e}", file=sys.stderr)
         return {"error": f"Failed to save model or scaler: {str(e)}"}
     
-    return {"message": "Training completed successfully", "accuracy": accuracy}
+    # Save prediction probabilities to CSV
+    try:
+        proba_df.to_csv(get_file_path("prediction_probabilities.csv"), index=False)
+        print(f"Prediction probabilities saved to: {get_file_path('prediction_probabilities.csv')}", file=sys.stderr)
+    except Exception as e:
+        print(f"Error saving prediction_probabilities.csv: {e}", file=sys.stderr)
+    
+    # Save training metrics to JSON
+    training_metrics = {
+        "accuracy": float(accuracy),
+        "best_parameters": grid_search.best_params_,
+        "confusion_matrix": cm_dict,
+        "cross_validation_scores": cv_scores_dict,
+        "classification_report": classification_report(y_test, y_pred, labels=[0, 1], zero_division=0, output_dict=True)
+    }
+    try:
+        with open(get_file_path("training_metrics.json"), "w") as f:
+            json.dump(training_metrics, f, indent=2)
+        print(f"Training metrics saved to: {get_file_path('training_metrics.json')}", file=sys.stderr)
+    except Exception as e:
+        print(f"Error saving training_metrics.json: {e}", file=sys.stderr)
+        return {"error": f"Failed to save training metrics: {str(e)}"}
+    
+    return {
+        "message": "Training completed successfully",
+        "accuracy": float(accuracy),
+        "confusion_matrix": cm_dict,
+        "cross_validation_scores": cv_scores_dict,
+        "prediction_probabilities_file": "prediction_probabilities.csv",
+        "training_metrics_file": "training_metrics.json"
+    }
 
 if __name__ == "__main__":
     import argparse

@@ -9,7 +9,6 @@ import datetime
 app = FastAPI()
 
 # MongoDB setup with hardcoded URL
-# TODO: Replace with your actual MongoDB Atlas URL
 MONGODB_URI = "mongodb+srv://vihi:vihi@itpcluster.bhmi6vu.mongodb.net/EcoCycle?retryWrites=true&w=majority"
 mongo_client = MongoClient(MONGODB_URI)
 db = mongo_client["EcoCycle"]
@@ -22,7 +21,7 @@ def get_file_path(filename):
     """Helper function to get the full path for files."""
     return os.path.join(BASE_DIR, filename)
 
-# Pydantic model for request validation (existing)
+# Pydantic model for request validation
 class Coordinates(BaseModel):
     start_lat: float
     start_lon: float
@@ -55,23 +54,44 @@ async def predict_tourism(coords: Coordinates):
                 -90 <= coords.end_lat <= 90 and -180 <= coords.end_lon <= 180):
             raise HTTPException(status_code=400, detail="Invalid coordinate values")
 
-        # Check if model file exists
+        # Check if model and scaler files exist
         model_path = get_file_path("random_forest_model.pkl")
+        scaler_path = get_file_path("scaler.pkl")
         if not os.path.exists(model_path):
             raise HTTPException(status_code=404, detail="Model file 'random_forest_model.pkl' not found")
+        if not os.path.exists(scaler_path):
+            raise HTTPException(status_code=404, detail="Scaler file 'scaler.pkl' not found")
 
-        # Run the predict_tourism function
+        # Run the predict_attractions function
         result = predict_attractions(
             coords.start_lat,
             coords.start_lon,
             coords.end_lat,
             coords.end_lon,
-            model_path
+            model_path,
+            scaler_path
         )
 
         # Check if result contains an error
         if "error" in result:
             raise HTTPException(status_code=500, detail=result["error"])
+
+        # Ensure attractions include prediction probabilities
+        for attraction in result.get("attractions", []):
+            if "prediction_probability" not in attraction:
+                attraction["prediction_probability"] = 0.0  # Default if missing
+            if "predicted_relevant" not in attraction:
+                attraction["predicted_relevant"] = 0  # Default if missing
+
+        # Ensure metrics include training metrics
+        metrics = result.get("metrics", {})
+        if "training_confusion_matrix" not in metrics:
+            metrics["training_confusion_matrix"] = {}
+        if "training_cross_validation_scores" not in metrics:
+            metrics["training_cross_validation_scores"] = {}
+        if "training_accuracy" not in metrics:
+            metrics["training_accuracy"] = 0.0
+        result["metrics"] = metrics
 
         return result
 
@@ -88,10 +108,13 @@ async def get_return_route(loc: CurrentLocation):
                 -90 <= loc.start_lat <= 90 and -180 <= loc.start_lon <= 180):
             raise HTTPException(status_code=400, detail="Invalid coordinate values")
 
-        # Check if model file exists
+        # Check if model and scaler files exist
         model_path = get_file_path("random_forest_model.pkl")
+        scaler_path = get_file_path("scaler.pkl")
         if not os.path.exists(model_path):
             raise HTTPException(status_code=404, detail="Model file 'random_forest_model.pkl' not found")
+        if not os.path.exists(scaler_path):
+            raise HTTPException(status_code=404, detail="Scaler file 'scaler.pkl' not found")
 
         # Run the predict_return_route function
         result = predict_return_route(
@@ -99,12 +122,30 @@ async def get_return_route(loc: CurrentLocation):
             loc.current_lon,
             loc.start_lat,
             loc.start_lon,
-            model_path
+            model_path,
+            scaler_path
         )
 
         # Check if result contains an error
         if "error" in result:
             raise HTTPException(status_code=500, detail=result["error"])
+
+        # Ensure attractions include prediction probabilities
+        for attraction in result.get("attractions", []):
+            if "prediction_probability" not in attraction:
+                attraction["prediction_probability"] = 0.0  # Default if missing
+            if "predicted_relevant" not in attraction:
+                attraction["predicted_relevant"] = 0  # Default if missing
+
+        # Ensure metrics include training metrics
+        metrics = result.get("metrics", {})
+        if "training_confusion_matrix" not in metrics:
+            metrics["training_confusion_matrix"] = {}
+        if "training_cross_validation_scores" not in metrics:
+            metrics["training_cross_validation_scores"] = {}
+        if "training_accuracy" not in metrics:
+            metrics["training_accuracy"] = 0.0
+        result["metrics"] = metrics
 
         return result
 
@@ -136,6 +177,7 @@ async def store_location(location: Location):
             "type": location.type,
             "category": location.category,
             "rating": location.rating,
+            "ratings_count": 0,  # Default value, as not provided in input
             "description": location.description,
             "image_urls": location.image_urls,
             "source": location.source,
@@ -151,17 +193,17 @@ async def store_location(location: Location):
         if existing_location:
             raise HTTPException(status_code=400, detail="Location with same name and coordinates already exists")
 
-        # Insert into MongoDB
+        # Insert the document into MongoDB
         result = locations_collection.insert_one(location_doc)
-        return {
-            "message": "Location stored successfully",
-            "id": str(result.inserted_id)
-        }
+        if result.inserted_id:
+            return {"message": "Location stored successfully", "location_id": str(result.inserted_id)}
+        else:
+            raise HTTPException(status_code=500, detail="Failed to store location")
 
     except HTTPException as e:
         raise e
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Failed to store location: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Server error: {str(e)}")
 
 if __name__ == "__main__":
     import uvicorn
